@@ -1,0 +1,5 @@
+{
+  "name": "What's Up Detroit",
+  "description": "anonymous social media app based in Detroit",
+  "image": "heroku/node.js"
+}
