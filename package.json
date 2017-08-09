@@ -1,7 +1,6 @@
 {
   "name": "final-project",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "dependencies": {
     "angular": "^1.6.4",
@@ -29,5 +28,6 @@
   "bugs": {
     "url": "https://github.com/mmcfarlin107/WhatsUpDetroit/issues"
   },
-  "homepage": "https://github.com/mmcfarlin107/WhatsUpDetroit#readme"
+  "homepage": "https://github.com/mmcfarlin107/WhatsUpDetroit#readme",
+  "description": ""
 }
