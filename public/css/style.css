@@ -11,7 +11,7 @@ body {
 
 @font-face {
   font-family: "Marck Script";
-  src: url(../fonts/MarckScript-Regular.ttf);
+  src: url("../fonts/MarckScript-Regular.ttf");
 }
 
 
@@ -179,7 +179,7 @@ body {
     transform: scale(1);
   }
   100% {
-    transform: scale(1.1);
+    transform: scale(1.10);
   }
 }
 
