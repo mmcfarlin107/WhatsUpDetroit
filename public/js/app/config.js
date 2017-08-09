@@ -3,34 +3,7 @@ var app = angular.module('detroitMod');
 app.config(function($routeProvider){
 $routeProvider
     .when('/home', {
-      controller: 'partial-controller',
-<<<<<<< HEAD
-      templateUrl: 'home.html'
-    })
-    .when('/downtown', {
-      controller: 'partial-controller',
-      templateUrl: 'downtown.html'
-    })
-    .when('/corktown', {
-      controller: 'partial-controller',
-      templateUrl: 'corktown.html'
-    })
-    .when('/woodbridge', {
-      controller: 'partial-controller',
-      templateUrl: 'woodbridge.html'
-    })
-    .when('/new-center', {
-      controller: 'partial-controller',
-      templateUrl: 'new-center.html'
-    })
-    .when('/east-central', {
-      controller: 'partial-controller',
-      templateUrl: 'east-central.html'
-    })
-    .when('/southwest', {
-      controller: 'partial-controller',
-      templateUrl: 'southwest.html'
-=======
+      controller: 'partialCtrl',
       templateUrl: 'partials/home.html'
     })
     .when('/downtown', {
@@ -42,7 +15,7 @@ $routeProvider
       templateUrl: 'partials/corktown.html'
     })
     .when('/woodbridge', {
-      controller: 'partial-controller',
+      controller: 'partialCtrl',
       templateUrl: 'partials/woodbridge.html'
     })
     .when('/new-center', {
@@ -56,7 +29,6 @@ $routeProvider
     .when('/southwest', {
       controller: 'partialCtrl',
       templateUrl: 'partials/southwest.html'
->>>>>>> master
     })
     .otherwise({
       redirectTo: '/home'
