@@ -33,14 +33,12 @@ app.factory('detroitFactory', function($http, $location){
 			url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + crd.latitude + ',' + crd.longitude + '&key=AIzaSyDPVrV4R_jLLWAIQe4zPaIJaNSEJGiRwYM'
 		}).then(function successfulCallback(response){
 			zip = response.data.results[4].address_components[0].long_name
-<<<<<<< HEAD
+
 			switch(zip) {
 				case 48226:
 					$location.path('/downtown')
 
 			}
-=======
->>>>>>> master
 
 		});
 	}
