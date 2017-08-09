@@ -1,6 +1,6 @@
 var app = angular.module('detroitMod');
 
-app.controller('homeCtrl', function($scope, $location, detroitFactory){
+app.controller('homeCtrl', function($scope, $rootScope, $location, detroitFactory){
 	detroitFactory.getLocation();
 
 	setTimeout(function () {
