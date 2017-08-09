@@ -2,13 +2,16 @@ var app = angular.module('detroitMod');
 
 app.factory('detroitFactory', function($http){
 
-	var crd;
-	var zip;
-
-	if(navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(success, error, options)
-	} else {
-		console.log('your shit dont work');
+	return {
+		getLocation: getLocation,
+	}
+	
+	function getLocation() {
+		if(navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(success, error, options)
+		} else {
+			console.log('your shit dont work');
+		}
 	}
 	/*
 	below function is passed as a parameter into geolocation api call.
