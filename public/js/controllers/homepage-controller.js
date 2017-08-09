@@ -1,12 +1,28 @@
 var app = angular.module('detroitMod');
 
-app.controller('partialCtrl', function($scope, $location, detroitFactory){
-	$scope.zip = 'getting info..'
+app.controller('homeCtrl', function($scope, $location, detroitFactory){
 	detroitFactory.getLocation();
 
 	setTimeout(function () {
         $scope.$apply(function () {
-            $scope.zip = detroitFactory.getZip() ;
+            $rootScope.zip = detroitFactory.getZip();
+	            if($rootScope.zip === "48226"){
+				$location.path('/downtown')
+			} else if($rootScope.zip === "48216") {
+				$location.path('/corktown')
+			} else if ($rootScope.zip === "48208") {
+				$location.path('/woodbridge')
+			} else if ($rootScope.zip === "48202") {
+				$location.path('/new-center')
+			} else if ($rootScope.zip === "48201") {
+				$location.path('/midtown')
+			} else if ($rootScope.zip === '48207') {
+				$location.path('/east-central')
+			} else if ($rootScope.zip === '48209') {
+				$location.path('/southwest')
+			} else {
+				console.log('error or invalid zip code')
+			}
         });
     }, 5000);
 	

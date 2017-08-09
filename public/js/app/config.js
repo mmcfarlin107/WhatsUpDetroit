@@ -3,35 +3,35 @@ var app = angular.module('detroitMod');
 app.config(function($routeProvider){
 $routeProvider
     .when('/home', {
-      controller: 'partialCtrl',
+      controller: 'homeCtrl',
       templateUrl: 'partials/home.html'
     })
     .when('/downtown', {
-      controller: 'partialCtrl',
+      controller: 'downtown',
       templateUrl: 'partials/downtown.html'
     })
     .when('/corktown', {
-      controller: 'partialCtrl',
+      controller: 'corktown',
       templateUrl: 'partials/corktown.html'
     })
     .when('/woodbridge', {
-      controller: 'partialCtrl',
+      controller: 'woodbridge',
       templateUrl: 'partials/woodbridge.html'
     })
     .when('/new-center', {
-      controller: 'partialCtrl',
+      controller: 'newCenter',
       templateUrl: 'partials/new-center.html'
     })
     .when('/east-central', {
-      controller: 'partialCtrl',
+      controller: 'eastCentral',
       templateUrl: 'partials/east-central.html'
     })
     .when('/southwest', {
-      controller: 'partialCtrl',
+      controller: 'southwest',
       templateUrl: 'partials/southwest.html'
     })
     .when('/midtown', {
-      controller: 'partialCtrl',
+      controller: 'midtown',
       templateUrl: 'partials/midtown.html'
     })
     .otherwise({
