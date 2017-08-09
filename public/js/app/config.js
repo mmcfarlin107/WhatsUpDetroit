@@ -4,31 +4,31 @@ app.config(function($routeProvider){
 $routeProvider
     .when('/home', {
       controller: 'partial-controller',
-      templateUrl: 'home.html'
+      templateUrl: 'partials/home.html'
     })
     .when('/downtown', {
-      controller: 'partial-controller',
-      templateUrl: 'downtown.html'
+      controller: 'partialCtrl',
+      templateUrl: 'partials/downtown.html'
     })
     .when('/corktown', {
-      controller: 'partial-controller',
-      templateUrl: 'corktown.html'
+      controller: 'partialCtrl',
+      templateUrl: 'partials/corktown.html'
     })
     .when('/woodbridge', {
       controller: 'partial-controller',
-      templateUrl: 'woodbridge.html'
+      templateUrl: 'partials/woodbridge.html'
     })
     .when('/new-center', {
-      controller: 'partial-controller',
-      templateUrl: 'new-center.html'
+      controller: 'partialCtrl',
+      templateUrl: 'partials/new-center.html'
     })
     .when('/east-central', {
-      controller: 'partial-controller',
-      templateUrl: 'east-central.html'
+      controller: 'partialCtrl',
+      templateUrl: 'partials/east-central.html'
     })
     .when('/southwest', {
-      controller: 'partial-controller',
-      templateUrl: 'southwest.html'
+      controller: 'partialCtrl',
+      templateUrl: 'partials/southwest.html'
     })
     .otherwise({
       redirectTo: '/home'
