@@ -1,6 +1,6 @@
 var app = angular.module('detroitMod');
 
-app.factory('detroitFactory', function($http){
+app.factory('detroitFactory', function($http, $location){
 
 	return {
 		getLocation: getLocation,
@@ -34,6 +34,10 @@ app.factory('detroitFactory', function($http){
 		}).then(function successfulCallback(response){
 			console.log(response.data.results[4].address_components[0].long_name)
 			zip = response.data.results[4].address_components[0].long_name
+			switch(zip) {
+				case 48226:
+					$location.path('/downtown')
+			}
 
 		});
 	}

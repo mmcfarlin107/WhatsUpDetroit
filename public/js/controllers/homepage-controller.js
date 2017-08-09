@@ -9,7 +9,7 @@ app.controller('homeCtrl', function($scope, detroitFactory){
             $scope.zip = detroitFactory.getZip() ;
         });
     }, 5000);
-
+	
 
 });
 
