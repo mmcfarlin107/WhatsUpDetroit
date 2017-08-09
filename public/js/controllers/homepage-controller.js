@@ -1,6 +1,6 @@
 var app = angular.module('detroitMod');
 
-app.controller('partialCtrl', function($scope, detroitFactory){
+app.controller('partialCtrl', function($scope, $location, detroitFactory){
 	$scope.zip = 'getting info..'
 	detroitFactory.getLocation();
 

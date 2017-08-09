@@ -3,7 +3,7 @@ var app = angular.module('detroitMod');
 app.config(function($routeProvider){
 $routeProvider
     .when('/home', {
-      controller: 'partial-controller',
+      controller: 'partialCtrl',
       templateUrl: 'partials/home.html'
     })
     .when('/downtown', {
@@ -15,7 +15,7 @@ $routeProvider
       templateUrl: 'partials/corktown.html'
     })
     .when('/woodbridge', {
-      controller: 'partial-controller',
+      controller: 'partialCtrl',
       templateUrl: 'partials/woodbridge.html'
     })
     .when('/new-center', {
@@ -29,6 +29,10 @@ $routeProvider
     .when('/southwest', {
       controller: 'partialCtrl',
       templateUrl: 'partials/southwest.html'
+    })
+    .when('/midtown', {
+      controller: 'partialCtrl',
+      templateUrl: 'partials/midtown.html'
     })
     .otherwise({
       redirectTo: '/home'

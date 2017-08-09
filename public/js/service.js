@@ -32,13 +32,7 @@ app.factory('detroitFactory', function($http, $location){
 			method: 'GET',
 			url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + crd.latitude + ',' + crd.longitude + '&key=AIzaSyDPVrV4R_jLLWAIQe4zPaIJaNSEJGiRwYM'
 		}).then(function successfulCallback(response){
-			console.log(response.data.results[4].address_components[0].long_name)
 			zip = response.data.results[4].address_components[0].long_name
-			switch(zip) {
-				case 48226:
-					$location.path('/downtown')
-				
-			}
 
 		});
 	}
@@ -54,6 +48,23 @@ app.factory('detroitFactory', function($http, $location){
 	}
 
 	function getZip() {
+		if(zip === "48226"){
+			$location.path('/downtown')
+		} else if(zip === "48216") {
+			$location.path('/corktown')
+		} else if (zip === "48208") {
+			$location.path('/woodbridge')
+		} else if (zip === "48202") {
+			$location.path('/new-center')
+		} else if (zip === "48201") {
+			$location.path('/midtown')
+		} else if (zip === '48207') {
+			$location.path('/east-central')
+		} else if (zip === '48209') {
+			$location.path('/southwest')
+		} else {
+			console.log('error or invalid zip code')
+		}
 		console.log(zip)
 		return zip
 	}
