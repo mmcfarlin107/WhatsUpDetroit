@@ -7,30 +7,32 @@
     <title>What's Up Detroit</title>
   </head>
 <body>
-  <div class="row">
-    <div class="title">
-      <p>What's up, Detroit?</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="whatsUp">
-      <div class="dropdown">
-        <button class="dropbtn"> What are people thinking in... </button>
-        <div class="dropdown-content">
-          <a href="#!/downtown">Downtown</a>
-          <a href="#!/corktown">Corktown</a>
-          <a href="#!/woodbridge">Woodbridge</a>
-          <a href="#!/new-center">New Center</a>
-          <a href="#!/east-central">East Central</a>
-          <a href="#!/southwest">Southwest</a>
-          <a href="#!/midtown">Midtown</a>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="title">
+        <p>What's up, Detroit?</p>
       </div>
     </div>
+    <div class="row">
+      <div class="whatsUp">
+        <div class="dropdown">
+          <button class="dropbtn"> What are people thinking in... </button>
+          <div class="dropdown-content">
+            <a href="#!/downtown">Downtown</a>
+            <a href="#!/corktown">Corktown</a>
+            <a href="#!/woodbridge">Woodbridge</a>
+            <a href="#!/new-center">New Center</a>
+            <a href="#!/east-central">East Central</a>
+            <a href="#!/southwest">Southwest</a>
+            <a href="#!/midtown">Midtown</a>
+          </div>
+        </div>
+        <button type="button" name="button" class="submitPost">Submit a post</button>
+      </div>
+    </div>
+
+    <ng-view></ng-view>
   </div>
-
-  <ng-view></ng-view>
-
   <script src="js/lib/angular.min.js"></script>
   <script src="https://code.angularjs.org/1.6.4/angular-route.js"></script>
   <script src="js/app/module.js"></script>
