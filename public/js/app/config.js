@@ -30,6 +30,10 @@ $routeProvider
       controller: 'partialCtrl',
       templateUrl: 'partials/southwest.html'
     })
+    .when('/midtown', {
+      controller: 'partialCtrl',
+      templateUrl: 'partials/midtown.html'
+    })
     .otherwise({
       redirectTo: '/home'
     })
