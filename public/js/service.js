@@ -4,6 +4,7 @@ app.factory('detroitFactory', function($http){
 
 	return {
 		getLocation: getLocation,
+		getZip: getZip
 	}
 	
 	function getLocation() {
@@ -13,6 +14,8 @@ app.factory('detroitFactory', function($http){
 			console.log('your shit dont work');
 		}
 	}
+
+	var zip;
 	/*
 	below function is passed as a parameter into geolocation api call.
 	upon success, the returned latitude and longitude data are passed into 
@@ -30,7 +33,8 @@ app.factory('detroitFactory', function($http){
 			url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + crd.latitude + ',' + crd.longitude + '&key=AIzaSyDPVrV4R_jLLWAIQe4zPaIJaNSEJGiRwYM'
 		}).then(function successfulCallback(response){
 			console.log(response.data.results[4].address_components[0].long_name)
-			var zip = response.data.results[4].address_components[0].long_name
+			zip = response.data.results[4].address_components[0].long_name
+
 		});
 	}
 
@@ -43,6 +47,14 @@ app.factory('detroitFactory', function($http){
 		timeout: 5000,
 		maximumAge: 0
 	}
+
+	function getZip() {
+		console.log(zip)
+		return zip
+	}
+
+
+	
 
 	/*
 	Downtown: 48226
