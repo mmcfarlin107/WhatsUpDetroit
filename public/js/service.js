@@ -48,10 +48,22 @@ app.factory('detroitFactory', function($http, $location){
 	}
 
 	function getZip() {
-		if(zip == 48226){
+		if(zip === "48226"){
 			$location.path('/downtown')
-		} else {
+		} else if(zip === "48216") {
 			$location.path('/corktown')
+		} else if (zip === "48208") {
+			$location.path('/woodbridge')
+		} else if (zip === "48202") {
+			$location.path('/new-center')
+		} else if (zip === "48201") {
+			$location.path('/midtown')
+		} else if (zip === '48207') {
+			$location.path('/east-central')
+		} else if (zip === '48209') {
+			$location.path('/southwest')
+		} else {
+			console.log('error or invalid zip code')
 		}
 		console.log(zip)
 		return zip
