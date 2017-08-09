@@ -1,6 +1,6 @@
 var app = angular.module('detroitMod');
 
-app.controller('homeCtrl', function($scope, detroitFactory){
+app.controller('partialCtrl', function($scope, detroitFactory){
 	$scope.zip = 'getting info..'
 	detroitFactory.getLocation();
 
@@ -9,7 +9,7 @@ app.controller('homeCtrl', function($scope, detroitFactory){
             $scope.zip = detroitFactory.getZip() ;
         });
     }, 5000);
-
+	
 
 });
 
