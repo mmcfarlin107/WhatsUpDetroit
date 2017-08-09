@@ -32,13 +32,7 @@ app.factory('detroitFactory', function($http, $location){
 			method: 'GET',
 			url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + crd.latitude + ',' + crd.longitude + '&key=AIzaSyDPVrV4R_jLLWAIQe4zPaIJaNSEJGiRwYM'
 		}).then(function successfulCallback(response){
-			console.log(response.data.results[4].address_components[0].long_name)
 			zip = response.data.results[4].address_components[0].long_name
-			switch(zip) {
-				case 48226:
-					$location.path('/downtown')
-				
-			}
 
 		});
 	}
@@ -54,6 +48,11 @@ app.factory('detroitFactory', function($http, $location){
 	}
 
 	function getZip() {
+		if(zip == 48226){
+			$location.path('/downtown')
+		} else {
+			$location.path('/corktown')
+		}
 		console.log(zip)
 		return zip
 	}
