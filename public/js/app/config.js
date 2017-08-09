@@ -7,11 +7,11 @@ $routeProvider
       templateUrl: 'partials/home.html'
     })
     .when('/downtown', {
-      controller: 'partial-controller',
+      controller: 'partialCtrl',
       templateUrl: 'partials/downtown.html'
     })
     .when('/corktown', {
-      controller: 'partial-controller',
+      controller: 'partialCtrl',
       templateUrl: 'partials/corktown.html'
     })
     .when('/woodbridge', {
@@ -19,15 +19,15 @@ $routeProvider
       templateUrl: 'partials/woodbridge.html'
     })
     .when('/new-center', {
-      controller: 'partial-controller',
+      controller: 'partialCtrl',
       templateUrl: 'partials/new-center.html'
     })
     .when('/east-central', {
-      controller: 'partial-controller',
+      controller: 'partialCtrl',
       templateUrl: 'partials/east-central.html'
     })
     .when('/southwest', {
-      controller: 'partial-controller',
+      controller: 'partialCtrl',
       templateUrl: 'partials/southwest.html'
     })
     .otherwise({

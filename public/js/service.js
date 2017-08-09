@@ -37,6 +37,7 @@ app.factory('detroitFactory', function($http, $location){
 			switch(zip) {
 				case 48226:
 					$location.path('/downtown')
+				
 			}
 
 		});
