@@ -56,7 +56,7 @@ body {
   background-color: rgba(250, 235, 215, 0.75);
   border-radius: 10px;
   position: relative;
-  z-index: 10000000;
+  z-index: 50;
   text-align: center;
 }
 
@@ -96,7 +96,7 @@ body {
     text-align: center;
     position: relative;
     display: inline-block;
-    z-index: 10;
+    z-index: 5;
     width: 240px;
     margin:5px auto;
 }.dropdown-content {
@@ -181,7 +181,7 @@ body {
   color: white;
 }.post:hover{
   animation: scale-up-center 0.25s both;
-  z-index: 1000;
+  z-index: 10;
 }@keyframes scale-up-center {
   0% {
     transform: scale(1);
@@ -241,6 +241,11 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 10px;
+  top: 30%;
+  position: fixed;
+  left: 50%;
+  margin-left: -200px;
+  z-index: 100;
 }.inputTextArea{
   display: block;
   width: 300px;
@@ -252,4 +257,10 @@ body {
   height: 30px;
 }.cancelBtn{
 }.submitBtn{
+}
+
+
+
+.hidden {
+  display: none;
 }
