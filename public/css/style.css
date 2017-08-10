@@ -51,7 +51,7 @@ body {
 .whatsUp{
   font-family: 'arial';
   width: 270px;
-  height: 100px;
+  height: 180px;
   margin: 10px auto;
   background-color: rgba(250, 235, 215, 0.75);
   border-radius: 10px;
@@ -120,6 +120,14 @@ body {
     display: block;
 }.dropdown:hover .dropbtn {
     background-color: #00bfff;
+}.submitPost{
+  padding: 16px;
+  font-size: 16px;
+  width: 240px;
+  height: 80px;
+  background-color: cyan;
+  color: white;
+  border-radius: 10px;
 }
 
 
@@ -220,4 +228,28 @@ body {
   .title{
     font-size: 9vw;
   }
+}
+
+
+
+.inputDiv {
+  width: 90%;
+  max-width: 400px;
+  min-height: 170px;
+  background-color: cyan;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+}.inputTextArea{
+  display: block;
+  width: 300px;
+  height: 100px;
+  margin: 10px auto;
+}.inputBtns{
+  display: inline;
+  width: 70px;
+  height: 30px;
+}.cancelBtn{
+}.submitBtn{
 }
