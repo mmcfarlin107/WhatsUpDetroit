@@ -10,14 +10,18 @@ app.controller('corktown', function($scope, $rootScope){
 	}
 });
 
-app.controller('downtown', function($scope, $rootScope){
+app.controller('downtown', function($scope, detroitFactory, $rootScope){
 	$scope.areaName = "Downtown"
 	$scope.thisZip = "48226"
 	if($scope.thisZip === $rootScope.zip) {
 		$scope.hide = false
 	} else {
 		$scope.hide = true
-	}
+	};
+
+	detroitFactory.getDowntown().then(function(){
+		// may need to add function
+	});
 });
 
 app.controller('midtown', function($scope, $rootScope){

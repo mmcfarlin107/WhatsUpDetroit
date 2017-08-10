@@ -5,7 +5,7 @@ var routes=require('./route');
 
 
 app.use(bodyParser.json({extended:true}));
-app.use('./', routes);
+app.use('/', routes);
 app.use(express.static(__dirname + '/public'));
 
 var port = process.env.PORT || 5000;

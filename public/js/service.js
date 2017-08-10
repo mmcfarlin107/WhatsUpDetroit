@@ -2,11 +2,31 @@ var app = angular.module('detroitMod');
 
 app.factory('detroitFactory', function($http, $location){
 
+var postList = [];
+
 	return {
 		getLocation: getLocation,
-		getZip: getZip
+		getZip: getZip,
+		getDowntown: getDowntown,
+		returnList: returnList
 	}
-	
+
+	function getDowntown (){
+		var p = $http({
+			method: 'GET',
+			url: '/downtown'
+		}).then(function(response){
+			postList = response.data;
+			console.log(postList);
+		});
+		return p;
+	}
+
+
+	function returnList(){
+		return postList;
+	}
+
 	function getLocation() {
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(success, error, options)
@@ -18,7 +38,7 @@ app.factory('detroitFactory', function($http, $location){
 	var zip;
 	/*
 	below function is passed as a parameter into geolocation api call.
-	upon success, the returned latitude and longitude data are passed into 
+	upon success, the returned latitude and longitude data are passed into
 	the crd object and then console logged.
 	then, an http call is made to the google geocoding API
 	the latitude and longitude we got from the html5 geolocation api are passed in as variables
@@ -38,7 +58,7 @@ app.factory('detroitFactory', function($http, $location){
 	}
 
 	function error(err) {
-		console.warn('error ' + err.code + ' ' + err.message); 
+		console.warn('error ' + err.code + ' ' + err.message);
 	}
 
 	var options = {
@@ -70,7 +90,7 @@ app.factory('detroitFactory', function($http, $location){
 	}
 
 
-	
+
 
 	/*
 	Downtown: 48226
