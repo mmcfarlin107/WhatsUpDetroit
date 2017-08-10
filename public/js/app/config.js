@@ -8,6 +8,15 @@ app.directive('postPopulate', function(){
       templateUrl: 'partials/template.html'
    }
 
+app.directive('inputField', function(){
+
+  return {
+    replace: false,
+    restrict: 'E',
+    templateUrl: 'partials/form.html'
+  }
+})
+
 });
 
 
