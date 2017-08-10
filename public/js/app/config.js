@@ -10,6 +10,15 @@ app.directive('postPopulate', function(){
 
 });
 
+app.directive('inputField', function(){
+
+  return {
+    replace: false,
+    restrict: 'E',
+    templateUrl: 'partials/form.html'
+  }
+});
+
 
 app.config(function($routeProvider){
 $routeProvider

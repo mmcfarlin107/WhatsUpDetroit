@@ -7,8 +7,10 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 	$scope.thisZip = "48216"
 	if($scope.thisZip === $rootScope.zip) {
 		$scope.hide = false
+		$scope.placeholder = "what's on your mind?"
 	} else {
 		$scope.hide = true
+		$scope.placeholder = "you can't post here right now"
 	};
 	detroitFactory.getCorktown().then(function(){
 		$scope.posts = detroitFactory.returnList();
