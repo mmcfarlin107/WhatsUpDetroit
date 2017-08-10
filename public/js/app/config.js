@@ -1,5 +1,16 @@
 var app = angular.module('detroitMod');
 
+app.directive('postPopulate', function(){
+  
+  return {
+      replace: false,
+      restrict: 'E',
+      templateUrl: 'partials/template.html'
+   }
+
+});
+
+
 app.config(function($routeProvider){
 $routeProvider
     .when('/home', {
