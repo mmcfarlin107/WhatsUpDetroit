@@ -25,7 +25,6 @@ app.controller('homeCtrl', function($scope, $rootScope, $location, detroitFactor
 			}
         });
     }, 5000);
-	
+
 
 });
-
