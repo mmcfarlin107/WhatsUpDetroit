@@ -232,6 +232,8 @@ body {
   position: fixed;
   left: 50%;
   margin-left: -200px;
+  border:2px solid #2eb9ce;
+
   /*high z index just to make sure it appears over anything else*/
   z-index: 100;
 }.inputTextArea{
