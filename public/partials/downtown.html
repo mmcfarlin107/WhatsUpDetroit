@@ -1,7 +1,8 @@
 <h4>{{thisZip}} $$$$$ {{zip}}</h4>
 <h5>{{areaName}}</h5>
-<input type="text" ng-disabled="hide">
-
-<input type="text" ng-disabled="hide">
+    <form ng-submit="newPost(content)">
+      <input type="text" ng-model="content.post">
+      <button ng-click="newPost(content)"></button>
+    </form>
 
 <post-populate></post-populate>

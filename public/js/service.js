@@ -14,6 +14,7 @@ var postList = [];
 		getNewCenter: getNewCenter,
 		getSouthwest: getSouthwest,
 		getWoodbridge: getWoodbridge,
+		addPost: addPost,
 		returnList: returnList
 	}
 
@@ -145,26 +146,24 @@ var postList = [];
 	}
 
 	function getZip() {
-		// if(zip === "48226"){
-		// 	$location.path('/downtown')
-		// } else if(zip === "48216") {
-		// 	$location.path('/corktown')
-		// } else if (zip === "48208") {
-		// 	$location.path('/woodbridge')
-		// } else if (zip === "48202") {
-		// 	$location.path('/new-center')
-		// } else if (zip === "48201") {
-		// 	$location.path('/midtown')
-		// } else if (zip === '48207') {
-		// 	$location.path('/east-central')
-		// } else if (zip === '48209') {
-		// 	$location.path('/southwest')
-		// } else {
-		// 	console.log('error or invalid zip code')
-		// }
 		console.log(zip)
 		return zip
 	}
+
+	
+	
+	function addPost(newPost) {
+   	return $http({
+   	   url: '/downtown',
+       method: 'POST',
+       data: newPost
+    }).then(function(response){
+    	console.log('working from service')
+      postList = response.data
+      console.log(postList)
+    })
+  }
+
 
 
 
