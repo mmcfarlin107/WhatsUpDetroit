@@ -3,6 +3,7 @@ body {
   height: 100%;
   /*background-image: url("background.jpg");*/
   background-image: url("../images/background.jpg");
+  /*no-repeat and fixed keep the background image fixed when you scroll, and won't repeat it if you go past where it would display*/
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -18,22 +19,27 @@ body {
 
 .title {
   text-align: center;
+  /*max width is set to 1k px so it looks a little bit more neat on larger screen resolutions*/
   width: 100%;
   max-width: 1000px;
   height: 20%;
   max-height: 200px;
-  margin:  3% auto;
+  margin: 3% auto;
+  /*font size scales by the view width*/
   font-size: 12vw;
+  /*stroke adds the outline to the title. it helps it stick out from the background image.*/
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
   text-shadow: -4px 4px 2px rgba(150, 150, 150, 1);
   font-family: 'Marck Script', cursive;
   color: #FAEBD7;
   transform: rotate(-5deg);
+  /*this animation expands the title from being compressed to being displayed normally over the course of 2 seconds.*/
 	animation: tracking-in-expand 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }.title p {
   max-height: 500px;
 }@keyframes tracking-in-expand {
+  /*this is where the calculations for the title expanding animation are done*/
   0% {
     letter-spacing: -0.5em;
     opacity: 0;
@@ -49,6 +55,7 @@ body {
 
 
 .whatsUp{
+  /*this class is for the div that holds the dropdown menu and the submit post button.*/
   font-family: 'arial';
   width: 270px;
   height: 180px;
@@ -61,7 +68,7 @@ body {
 }
 
 
-/*animation*/
+/*animation to fade in the whatsup div*/
 .whatsUp {
 	-webkit-animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 	        animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
@@ -84,6 +91,7 @@ body {
 
 
 .dropbtn {
+  /*this is the actual button that says "what are people thinking in..."*/
     background-color: cyan;
     color: white;
     padding: 16px;
@@ -93,13 +101,16 @@ body {
     display: block;
     margin: auto;
 }.dropdown {
+  /*this is the class meant to contain the dropbtn and the dropdown-content*/
     text-align: center;
     position: relative;
     display: inline-block;
+    /*this z-index is igher than the post area's z index so that it will display over it when hovered.*/
     z-index: 5;
     width: 240px;
     margin:5px auto;
 }.dropdown-content {
+  /*display:none until hovered (hover is down below)*/
     display: none;
     position: absolute;
     background-color: #f9f9f9;
@@ -199,30 +210,6 @@ body {
 
 
 
-.addPost{
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  position: fixed;
-  bottom: 1%;
-  right: 1%;
-  background-color: cyan;
-  color: white;
-  font-size: 60px;
-  text-align: center;
-  margin:auto;
-}.addPost:hover{
-  background-color: #00bfff;
-}
-
-
-@media (max-width: 500px) {
-  .addPost {
-    height: 50px;
-    width: 50px;
-    font-size: 30px;
-  }
-}
 @media (min-width: 1080px) {
   /*fixes title size on screen widths of higher than 1080p*/
   .title{
@@ -231,7 +218,7 @@ body {
 }
 
 
-
+/*this is the div for the input that pops up when you click on submit a post*/
 .inputDiv {
   width: 90%;
   max-width: 400px;
@@ -245,6 +232,7 @@ body {
   position: fixed;
   left: 50%;
   margin-left: -200px;
+  /*high z index just to make sure it appears over anything else*/
   z-index: 100;
 }.inputTextArea{
   display: block;
