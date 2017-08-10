@@ -22,14 +22,13 @@ var postList = [];
 		return p;
 	}
 
-<<<<<<< HEAD
-=======
+
 
 	function returnList(){
 		return postList;
 	}
 
->>>>>>> master
+
 	function getLocation() {
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(success, error, options)
