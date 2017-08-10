@@ -23,9 +23,9 @@ route.get('/downtown', function(req, res, next) {
     });
 });
 
-route.post('/downtown', function(req, res, next){
+route.post('/post', function(req, res, next){
   var data = req.body;
-  pool.query('insert into post_content (post, zip, up_votes, down_votes, score) values ($1::text, $2::text, $3::int, $4::int, $5::into)', [data.post, '48226', 0, 0, 0]).then(function(){
+  pool.query('insert into post_content (post, zip, up_votes, down_votes, score) values ($1::text, $2::text, $3::int, $4::int, $5::int)', [data.post, data.zip, 0, 0, 0]).then(function(){
 pool.query('SELECT post, up_votes, down_votes FROM post_content WHERE zip=$1::text and score>$2::int', ['48226', -10]).then(function(result){
   res.json(result.rows);
 })
