@@ -11,7 +11,7 @@ route.get('/home', function(req, res, next) {
 });
 
   route.get('/corktown', function(req, res, next) {
-    pool.query('SELECT * FROM post_content WHERE zip="48216"').then(function(result) {
+    pool.query('SELECT * FROM post_content WHERE zip=$1::text', ["48216"]).then(function(result) {
       res.json(result.rows);
     });
   });
