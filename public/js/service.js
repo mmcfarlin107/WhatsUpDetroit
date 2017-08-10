@@ -154,11 +154,10 @@ var postList = [];
 	
 	function addPost(newPost) {
    	return $http({
-   	   url: '/downtown',
+   	   url: '/post',
        method: 'POST',
        data: newPost
     }).then(function(response){
-    	console.log('working from service')
       postList = response.data
       console.log(postList)
     })
