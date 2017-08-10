@@ -241,6 +241,7 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 10px;
+  top: 30%;
   position: fixed;
   left: 50%;
   margin-left: -200px;
@@ -255,4 +256,10 @@ body {
   height: 30px;
 }.cancelBtn{
 }.submitBtn{
+}
+
+
+
+.hidden {
+  display: none;
 }
