@@ -13,28 +13,9 @@ route.get('/corktown', function(req, res, next) {
     pool.query('SELECT * FROM post_content WHERE zip="48216"').then(function(result) {
       res.json(result.rows);
     });
-});
-
-route.get('/downtown', function(req, res, next) {
-    pool.query('SELECT * FROM post_content WHERE zip="48226"').then(function(result) {
-      res.json(result.rows);
-    });
-});
-
-route.get('/east-central', function(req, res, next) {
-    pool.query('SELECT * FROM post_content WHERE zip="48207"').then(function(result) {
-      res.json(result.rows);
-    });
-});
-
-route.get('/midtown', function(req, res, next) {
-    pool.query('SELECT * FROM post_content WHERE zip="48201"').then(function(result) {
-      res.json(result.rows);
-    });
-});
-
-route.get('/new-center', function(req, res, next) {
-      pool.query('SELECT * FROM post_content WHERE zip="48202"').then(function(result) {
+  });
+    route.get('/downtown', function(req, res, next) {
+      pool.query('SELECT * FROM post_content WHERE zip=$1::text', ['48226']).then(function(result) {
         res.json(result.rows);
     });
 });
@@ -45,11 +26,31 @@ route.get('/southwest', function(req, res, next) {
       });
 });
 
-route.get('/woodbridge', function(req, res, next) {
-      pool.query('SELECT * FROM post_content WHERE zip="48208"').then(function(result) {
+      route.get('/east-central', function(req, res, next) {
+        pool.query('SELECT * FROM post_content WHERE zip=$1::text', ['48207']).then(function(result) {
           res.json(result.rows);
-    });
-});
+        });
+  });
+        route.get('/midtown', function(req, res, next) {
+          pool.query('SELECT * FROM post_content WHERE zip=$1::text', ['48201']).then(function(result) {
+            res.json(result.rows);
+          });
+  });
+          route.get('/new-center', function(req, res, next) {
+            pool.query('SELECT * FROM post_content WHERE zip=$1::text', ['48202']).then(function(result) {
+              res.json(result.rows);
+            });
+  });
+            route.get('/southwest', function(req, res, next) {
+                   pool.query('SELECT * FROM post_content WHERE zip=$1::text', ['48209']).then(function(result) {
+                     res.json(result.rows);
+                     });
+                     });
 
+            route.get('/woodbridge', function(req, res, next) {
+                            pool.query('SELECT * FROM post_content WHERE zip=$1::text', ['48208']).then(function(result) {
+                              res.json(result.rows);
+                              });
+                              });
 
 module.exports = route;

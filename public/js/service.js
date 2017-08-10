@@ -2,11 +2,34 @@ var app = angular.module('detroitMod');
 
 app.factory('detroitFactory', function($http, $location){
 
+var postList = [];
+
 	return {
 		getLocation: getLocation,
-		getZip: getZip
+		getZip: getZip,
+		getDowntown: getDowntown,
+		returnList: returnList
 	}
 
+	function getDowntown (){
+		var p = $http({
+			method: 'GET',
+			url: '/downtown'
+		}).then(function(response){
+			postList = response.data;
+			console.log(postList);
+		});
+		return p;
+	}
+
+<<<<<<< HEAD
+=======
+
+	function returnList(){
+		return postList;
+	}
+
+>>>>>>> master
 	function getLocation() {
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(success, error, options)
