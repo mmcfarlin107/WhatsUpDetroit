@@ -9,7 +9,7 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 		$scope.hide = true
 	};
 	detroitFactory.getCorktown().then(function(){
-		// may need to add function
+		$scope.posts = detroitFactory.returnList();
 	});
 
 });
@@ -38,7 +38,7 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 	};
 
 	detroitFactory.getMidtown().then(function(){
-		// may need to add function
+		$scope.posts = detroitFactory.returnList();
 	});
 });
 
@@ -51,7 +51,7 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 		$scope.hide = true
 	};
 	detroitFactory.getWoodbridge().then(function(){
-		// may need to add function
+		$scope.posts = detroitFactory.returnList();
 	});
 });
 
@@ -64,7 +64,7 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 		$scope.hide = true
 	};
 	detroitFactory.getNewCenter().then(function(){
-		// may need to add function
+		$scope.posts = detroitFactory.returnList();
 	});
 });
 
@@ -77,7 +77,7 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 		$scope.hide = true
 	};
 	detroitFactory.getEastCentral().then(function(){
-		// may need to add function
+		$scope.posts = detroitFactory.returnList();
 	});
 });
 
@@ -90,7 +90,7 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 		$scope.hide = true
 	};
 	detroitFactory.getSouthwest().then(function(){
-		// may need to add function
+		$scope.posts = detroitFactory.returnList();
 	});
 });
 
