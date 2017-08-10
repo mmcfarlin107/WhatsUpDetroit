@@ -1,5 +1,7 @@
 var app = angular.module('detroitMod');
 
+
+//BEGIN CORKTOWN CONTROLLER
 app.controller('corktown', function($scope, detroitFactory, $rootScope){
 	$scope.areaName = "Corktown"
 	$scope.thisZip = "48216"
@@ -12,8 +14,12 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 		$scope.posts = detroitFactory.returnList();
 	});
 
-});
 
+});
+//-----END------
+
+
+//BEGIN DOWNTOWN CONTROLLER
 app.controller('downtown', function($scope, detroitFactory, $rootScope){
 	$scope.areaName = "Downtown"
 	$scope.thisZip = "48226"
@@ -23,11 +29,21 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 		$scope.hide = true
 	};
 
+
 	detroitFactory.getDowntown().then(function(){
 		$scope.posts = detroitFactory.returnList();
 	});
-});
 
+	$scope.newPost = function(content) {
+		console.log('working from click')
+		detroitFactory.addPost(content).then(function(){
+			$scope.posts = detroitFactory.returnList();
+		})
+	}
+});
+//-----END------
+
+//BEGIN MIDTOWN CONTROLLER
 app.controller('midtown', function($scope, detroitFactory, $rootScope){
 	$scope.areaName = "Midtown"
 	$scope.thisZip = "48201"
@@ -41,7 +57,9 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 		$scope.posts = detroitFactory.returnList();
 	});
 });
+//-----END------
 
+//BEGIN WOODBRIDGE CONTROLLER
 app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 	$scope.areaName = "Woodbridge"
 	$scope.thisZip = "48208"
@@ -54,7 +72,10 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 		$scope.posts = detroitFactory.returnList();
 	});
 });
+//-----END------
 
+
+//BEGIN NEW CENTER CONTROLLER
 app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 	$scope.areaName = "New Center"
 	$scope.thisZip = "48202"
@@ -67,7 +88,10 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 		$scope.posts = detroitFactory.returnList();
 	});
 });
+//-----END------
 
+
+//BEGIN EAST CENTRAL CONTROLLER
 app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 	$scope.areaName = "East Central"
 	$scope.thisZip = "48207"
@@ -80,7 +104,10 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 		$scope.posts = detroitFactory.returnList();
 	});
 });
+//-----END------
 
+
+//BEGIN SOUTHWEST CONTROLLER
 app.controller('southwest', function($scope, detroitFactory, $rootScope){
 	$scope.areaName = "Southwest"
 	$scope.thisZip = "48209"
@@ -93,6 +120,7 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 		$scope.posts = detroitFactory.returnList();
 	});
 });
+//-----END------
 
 /*
 	Downtown: 48226
