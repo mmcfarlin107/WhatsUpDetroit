@@ -8,6 +8,12 @@ var postList = [];
 		getLocation: getLocation,
 		getZip: getZip,
 		getDowntown: getDowntown,
+		getCorktown: getCorktown,
+		getEastCentral: getEastCentral,
+		getMidtown: getMidtown,
+		getNewCenter: getNewCenter,
+		getSouthwest: getSouthwest,
+		getWoodbridge: getWoodbridge,
 		returnList: returnList
 	}
 
@@ -22,6 +28,71 @@ var postList = [];
 		return p;
 	}
 
+	function getCorktown (){
+		var p = $http({
+			method: 'GET',
+			url: '/corktown'
+		}).then(function(response){
+			postList = response.data;
+			console.log(postList);
+		});
+		return p;
+	}
+
+	function getEastCentral (){
+		var p = $http({
+			method: 'GET',
+			url: '/east-central'
+		}).then(function(response){
+			postList = response.data;
+			console.log(postList);
+		});
+		return p;
+	}
+
+	function getMidtown (){
+		var p = $http({
+			method: 'GET',
+			url: '/midtown'
+		}).then(function(response){
+			postList = response.data;
+			console.log(postList);
+		});
+		return p;
+	}
+
+	function getNewCenter (){
+		var p = $http({
+			method: 'GET',
+			url: '/new-center'
+		}).then(function(response){
+			postList = response.data;
+			console.log(postList);
+		});
+		return p;
+	}
+
+	function getSouthwest (){
+		var p = $http({
+			method: 'GET',
+			url: '/southwest'
+		}).then(function(response){
+			postList = response.data;
+			console.log(postList);
+		});
+		return p;
+	}
+
+	function getWoodbridge (){
+		var p = $http({
+			method: 'GET',
+			url: '/woodbridge'
+		}).then(function(response){
+			postList = response.data;
+			console.log(postList);
+		});
+		return p;
+	}
 
 	function returnList(){
 		return postList;
@@ -53,6 +124,12 @@ var postList = [];
 			url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + crd.latitude + ',' + crd.longitude + '&key=AIzaSyDPVrV4R_jLLWAIQe4zPaIJaNSEJGiRwYM'
 		}).then(function successfulCallback(response){
 			zip = response.data.results[4].address_components[0].long_name
+
+			switch(zip) {
+				case 48226:
+					$location.path('/downtown')
+
+			}
 
 		});
 	}
