@@ -52,7 +52,7 @@ route.get('/southwest', function(req, res, next) {
 });
 
 route.get('/woodbridge', function(req, res, next) {
-    pool.query('SELECT post, up_votes, down_votes FROM post_content WHERE zip=$1::text and score>$2::intco', ['48208', -10]).then(function(result) {
+    pool.query('SELECT post, up_votes, down_votes FROM post_content WHERE zip=$1::text and score>$2::int', ['48208', -10]).then(function(result) {
         res.json(result.rows);
         });
 });
