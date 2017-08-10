@@ -241,6 +241,9 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 10px;
+  position: fixed;
+  left: 50%;
+  margin-left: -200px;
 }.inputTextArea{
   display: block;
   width: 300px;
