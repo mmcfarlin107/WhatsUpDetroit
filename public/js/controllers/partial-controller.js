@@ -20,7 +20,7 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 	};
 
 	detroitFactory.getDowntown().then(function(){
-		// may need to add function
+		$scope.posts = detroitFactory.returnList();
 	});
 });
 
