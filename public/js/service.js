@@ -128,11 +128,11 @@ var postList = [];
 		}).then(function successfulCallback(response){
 			zip = response.data.results[4].address_components[0].long_name
 
-			switch(zip) {
-				case 48226:
-					$location.path('/downtown')
-
-			}
+			// switch(zip) {
+			// 	case 48226:
+			// 		$location.path('/downtown')
+			//
+			// }
 
 		});
 	}
@@ -152,8 +152,8 @@ var postList = [];
 		return zip
 	}
 
-	
-	
+
+
 	function addPost(newPost) {
    	return $http({
    	   url: '/post',
