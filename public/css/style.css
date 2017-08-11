@@ -183,7 +183,9 @@ body {
   padding-top: 5px;
   box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.75);
   border:2px solid #2eb9ce;
+  max-width: 95%;
 }.scoreStuff{
+  /*float: right;*/
 }.upvoteBtn{
   background-color: cyan;
   color: white;
@@ -232,6 +234,8 @@ body {
   position: fixed;
   left: 50%;
   margin-left: -200px;
+  border:2px solid #2eb9ce;
+
   /*high z index just to make sure it appears over anything else*/
   z-index: 100;
 }.inputTextArea{
@@ -246,3 +250,18 @@ body {
 }.cancelBtn{
 }.submitBtn{
 }
+<<<<<<< HEAD
+=======
+
+
+
+.hidden {
+  display: none;
+}
+
+
+
+.textArea{
+  overflow: auto;
+}
+>>>>>>> master

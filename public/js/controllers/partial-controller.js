@@ -10,20 +10,33 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 		$scope.placeholder = "what's on your mind?"
 	} else {
 		$scope.hide = true
-		$scope.placeholder = "you can't post here right now"
+		$scope.placeholder = "be sure to let us know what's happening once you get here!"
 	};
-	detroitFactory.getCorktown().then(function(){
+	detroitFactory.getPosts("48216").then(function(){
 		$scope.posts = detroitFactory.returnList();
 	});
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
 		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content, id).then(function(){
+		detroitFactory.addPost(content).then(function(){
+			$scope.posts = detroitFactory.returnList();
+		})
+	}
+	$scope.upvotePost = function(post, id) {
+		console.log(post, id)
+		detroitFactory.voteUp(post, id).then(function(){
+			console.log('sending data back');
 			$scope.posts = detroitFactory.returnList();
 		})
 	}
 
+	$scope.downvotePost = function(post, id){
+		console.log(post, id)
+		detroitFactory.voteDown(post, id).then(function(){
+			$scope.posts = detroitFactory.returnList();
+		})
+	}
 });
 //-----END------
 
@@ -34,10 +47,12 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 	$scope.thisZip = "48226"
 	if($scope.thisZip === $rootScope.zip) {
 		$scope.hide = false
+		$scope.placeholder = "what's on your mind?"
 	} else {
 		$scope.hide = true
+		$scope.placeholder = "be sure to let us know what's happening once you get here!"
 	};
-	detroitFactory.getDowntown().then(function(){
+	detroitFactory.getPosts("48226").then(function(){
 		$scope.posts = detroitFactory.returnList();
 	});
 	//function below parses input and sends to route and then to database, returns to ng repeat
@@ -60,7 +75,7 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 	$scope.downvotePost = function(post, id){
 		console.log(post, id)
 		detroitFactory.voteDown(post, id).then(function(){
-			$scope.posts = detroitFactory.returnList()
+			$scope.posts = detroitFactory.returnList();
 		})
 	}
 });
@@ -72,11 +87,13 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 	$scope.thisZip = "48201"
 	if($scope.thisZip === $rootScope.zip) {
 		$scope.hide = false
+		$scope.placeholder = "what's on your mind?"
 	} else {
 		$scope.hide = true
+		$scope.placeholder = "be sure to let us know what's happening once you get here!"
 	};
 
-	detroitFactory.getMidtown().then(function(){
+	detroitFactory.getPosts("48201").then(function(){
 		$scope.posts = detroitFactory.returnList();
 	});
 	//function below parses input and sends to route and then to database, returns to ng repeat
@@ -84,6 +101,20 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 		console.log('working from click')
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
+			$scope.posts = detroitFactory.returnList();
+		})
+	}
+	$scope.upvotePost = function(post, id) {
+		console.log(post, id)
+		detroitFactory.voteUp(post, id).then(function(){
+			console.log('sending data back');
+			$scope.posts = detroitFactory.returnList();
+		})
+	}
+
+	$scope.downvotePost = function(post, id){
+		console.log(post, id)
+		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 		})
 	}
@@ -96,10 +127,12 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 	$scope.thisZip = "48208"
 	if($scope.thisZip === $rootScope.zip) {
 		$scope.hide = false
+		$scope.placeholder = "what's on your mind?"
 	} else {
 		$scope.hide = true
+		$scope.placeholder = "be sure to let us know what's happening once you get here!"
 	};
-	detroitFactory.getWoodbridge().then(function(){
+	detroitFactory.getPosts("48208").then(function(){
 		$scope.posts = detroitFactory.returnList();
 	});
 	//function below parses input and sends to route and then to database, returns to ng repeat
@@ -107,6 +140,20 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 		console.log('working from click')
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
+			$scope.posts = detroitFactory.returnList();
+		})
+	}
+	$scope.upvotePost = function(post, id) {
+		console.log(post, id)
+		detroitFactory.voteUp(post, id).then(function(){
+			console.log('sending data back');
+			$scope.posts = detroitFactory.returnList();
+		})
+	}
+
+	$scope.downvotePost = function(post, id){
+		console.log(post, id)
+		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 		})
 	}
@@ -120,10 +167,12 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 	$scope.thisZip = "48202"
 	if($scope.thisZip === $rootScope.zip) {
 		$scope.hide = false
+		$scope.placeholder = "what's on your mind?"
 	} else {
 		$scope.hide = true
+		$scope.placeholder = "be sure to let us know what's happening once you get here!"
 	};
-	detroitFactory.getNewCenter().then(function(){
+	detroitFactory.getPosts("48202").then(function(){
 		$scope.posts = detroitFactory.returnList();
 	});
 	//function below parses input and sends to route and then to database, returns to ng repeat
@@ -131,6 +180,20 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 		console.log('working from click')
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
+			$scope.posts = detroitFactory.returnList();
+		})
+	}
+	$scope.upvotePost = function(post, id) {
+		console.log(post, id)
+		detroitFactory.voteUp(post, id).then(function(){
+			console.log('sending data back');
+			$scope.posts = detroitFactory.returnList();
+		})
+	}
+
+	$scope.downvotePost = function(post, id){
+		console.log(post, id)
+		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 		})
 	}
@@ -144,10 +207,12 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 	$scope.thisZip = "48207"
 	if($scope.thisZip === $rootScope.zip) {
 		$scope.hide = false
+		$scope.placeholder = "what's on your mind?"
 	} else {
 		$scope.hide = true
+		$scope.placeholder = "be sure to let us know what's happening once you get here!"
 	};
-	detroitFactory.getEastCentral().then(function(){
+	detroitFactory.getPosts("48207").then(function(){
 		$scope.posts = detroitFactory.returnList();
 	});
 	//function below parses input and sends to route and then to database, returns to ng repeat
@@ -155,6 +220,20 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 		console.log('working from click')
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
+			$scope.posts = detroitFactory.returnList();
+		})
+	}
+	$scope.upvotePost = function(post, id) {
+		console.log(post, id)
+		detroitFactory.voteUp(post, id).then(function(){
+			console.log('sending data back');
+			$scope.posts = detroitFactory.returnList();
+		})
+	}
+
+	$scope.downvotePost = function(post, id){
+		console.log(post, id)
+		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 		})
 	}
@@ -169,10 +248,12 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 	$scope.thisZip = "48209"
 	if($scope.thisZip === $rootScope.zip) {
 		$scope.hide = false
+		$scope.placeholder = "what's on your mind?"
 	} else {
 		$scope.hide = true
+		$scope.placeholder = "be sure to let us know what's happening once you get here!"
 	};
-	detroitFactory.getSouthwest().then(function(){
+	detroitFactory.getPosts("48209").then(function(){
 		$scope.posts = detroitFactory.returnList();
 	});
 	//function below parses input and sends to route and then to database, returns to ng repeat
@@ -180,6 +261,20 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 		console.log('working from click')
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
+			$scope.posts = detroitFactory.returnList();
+		})
+	}
+	$scope.upvotePost = function(post, id) {
+		console.log(post, id)
+		detroitFactory.voteUp(post, id).then(function(){
+			console.log('sending data back');
+			$scope.posts = detroitFactory.returnList();
+		})
+	}
+
+	$scope.downvotePost = function(post, id){
+		console.log(post, id)
+		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 		})
 	}
