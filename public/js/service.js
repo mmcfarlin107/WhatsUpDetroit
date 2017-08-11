@@ -15,6 +15,8 @@ var postList = [];
 		getSouthwest: getSouthwest,
 		getWoodbridge: getWoodbridge,
 		addPost: addPost,
+		voteUp: voteUp,
+		voteDown: voteDown,
 		returnList: returnList
 	}
 
@@ -164,8 +166,29 @@ var postList = [];
   }
 
 
+  function voteUp(post, id) {
+  	console.log('talking to service')
+  	var prom = $http({
+  		url: '/upvote/' + id,
+  		method: 'PUT',
+  		data: post
+  	}).then(function(response){
+  		postList = response.data
+  	})
+  	return prom;
+  }
 
-
+  function voteDown(post, id) {
+  	console.log('votedown talking to service')
+  	var prom = $http({
+  		url: '/downvote/' + id,
+  		method: 'PUT',
+  		data: post
+  	}).then(function(response){
+  		postList = response.data
+  	})
+  	return prom;
+  }
 
 	/*
 	Downtown: 48226
