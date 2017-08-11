@@ -33,7 +33,7 @@ route.put('/upvote/:id', function(req, res, next){
   var upvote = data.up_votes + 1;
   var score = data.score + 1;
   var zip = data.zip;
-  
+
   console.log('talking from route')
   pool.query('update post_content set up_votes = $1::int, score = $2::int where id = $3::int', [upvote, score, id]).then(function(result){
       pool.query('select * from post_content where zip = $1::text and score>$2::int order by id', [zip, -10]).then(function(result){
