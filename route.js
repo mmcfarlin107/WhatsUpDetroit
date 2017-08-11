@@ -12,13 +12,13 @@ route.get('/home', function(req, res, next) {
 
 
 route.get('/corktown', function(req, res, next) {
-    pool.query('SELECT * FROM post_content WHERE zip=$1::text and score>$2::int',['48216', -10]).then(function(result) {
+    pool.query('SELECT post, up_votes, down_votes FROM post_content WHERE zip=$1::text and score>$2::int',['48216', -10]).then(function(result) {
       res.json(result.rows);
     });
 });
 
 route.get('/downtown', function(req, res, next) {
-    pool.query('SELECT * FROM post_content WHERE zip=$1::text and score>$2::int', ['48226', -10]).then(function(result) {
+    pool.query('SELECT post, up_votes, down_votes FROM post_content WHERE zip=$1::text and score>$2::int', ['48226', -10]).then(function(result) {
       res.json(result.rows);
     });
 });
@@ -70,41 +70,6 @@ route.get('/woodbridge', function(req, res, next) {
         res.json(result.rows);
         });
 });
-
-route.put('/upvote/:id', function(req, res, next){
-  var id = req.params.id;
-  var data = req.body;
-  var upvote = data.up_votes + 1;
-  var score = data.score + 1;
-  var zip = data.zip;
-  
-  console.log('talking from route')
-  pool.query('update post_content set up_votes = $1::int, score = $2::int where id = $3::int', [upvote, score, id]).then(function(result){
-      pool.query('select * from post_content where zip = $1::text', [zip]).then(function(result){
-        res.send(result.rows)
-        console.log(result.rows)
-      })
-   
-    })
-  })
-
-route.put('/downvote/:id', function(req, res, next){
-  var id = req.params.id;
-  var data= req.body;
-  var downvote = data.down_votes + 1;
-  var score = data.score - 1;
-  var zip = data.zip;
-
-  console.log('downvote talking from route too')
-  pool.query('update post_content set down_votes = $1::int, score = $2::int where id = $3::int', [downvote, score, id]).then(function(result){
-      pool.query('select * from post_content where zip = $1::text', [zip]).then(function(result){
-        res.send(result.rows);
-        console.log(result.rows);
-      })
-  })
-})
-
-
 
 
 
