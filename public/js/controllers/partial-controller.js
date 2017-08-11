@@ -19,7 +19,7 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 	$scope.newPost = function(content) {
 		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
+		detroitFactory.addPost(content, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 		})
 	}
@@ -42,11 +42,25 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 	});
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
-		console.log('working from click')
 		content.zip = $rootScope.zip
 		console.log(content.zip)
 		detroitFactory.addPost(content).then(function(){
 			$scope.posts = detroitFactory.returnList();
+		})
+	}
+
+	$scope.upvotePost = function(post, id) {
+		console.log(post, id)
+		detroitFactory.voteUp(post, id).then(function(){
+			console.log('sending data back');
+			$scope.posts = detroitFactory.returnList();
+		})
+	}
+
+	$scope.downvotePost = function(post, id){
+		console.log(post, id)
+		detroitFactory.voteDown(post, id).then(function(){
+			$scope.posts = detroitFactory.returnList()
 		})
 	}
 });
@@ -144,6 +158,7 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 			$scope.posts = detroitFactory.returnList();
 		})
 	}
+
 });
 //-----END------
 

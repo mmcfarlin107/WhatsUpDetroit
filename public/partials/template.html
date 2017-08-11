@@ -5,9 +5,9 @@
             <p>{{post.post}}</p>
           </div>
           <div class="col-xs-2 col-md-2">
-            <button type="button" class="upvoteBtn">▲</button>
+            <button type="submit" ng-click="upvotePost(post, post.id)"class="upvoteBtn">▲</button>
             <p>+{{post.up_votes}}</p>
-            <button type="button" class="downvoteBtn">▼</button>
+            <button type="button" class="downvoteBtn" ng-click="downvotePost(post, post.id)">▼</button>
             <p>-{{post.down_votes}}</p>
           </div>
         </div>
