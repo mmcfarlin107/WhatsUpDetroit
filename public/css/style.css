@@ -246,17 +246,3 @@ body {
 }.cancelBtn{
 }.submitBtn{
 }
-
-
-
-.hidden {
-  display: none;
-}
-
-body > .inner {
-  display: none;
-}
-
-body.pg-loaded > .inner {
-  display: block;
-}
