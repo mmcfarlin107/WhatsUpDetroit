@@ -1,3 +1,27 @@
+  <div class="container">
+    <div class="row">
+      <div class="title">
+        <p>{{areaName}}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="whatsUp">
+        <div class="dropdown">
+          <button class="dropbtn"> What are people thinking in... </button>
+          <div class="dropdown-content">
+            <a href="#!/downtown">Downtown</a>
+            <a href="#!/corktown">Corktown</a>
+            <a href="#!/woodbridge">Woodbridge</a>
+            <a href="#!/new-center">New Center</a>
+            <a href="#!/east-central">East Central</a>
+            <a href="#!/southwest">Southwest</a>
+            <a href="#!/midtown">Midtown</a>
+          </div>
+        </div>
+        <button type="button" name="button" class="submitPost">Submit a post</button>
+      </div>
+    </div>
+
 <div ng-repeat="post in posts">
 	 <div class="col-xs-12 col-md-4">
         <div class="post col-xs-12 col-md-12">
@@ -5,9 +29,9 @@
             <p>{{post.post}}</p>
           </div>
           <div class="scorestuff col-xs-2 col-md-2">
-            <button type="submit" ng-click="upvotePost(post, post.id)"class="upvoteBtn">▲</button>
+            <button type="submit" ng-click="upvotePost(post, post.id, $index)" class="upvoteBtn" ng-disabled='post.disableUpVote'>▲</button>
             <p>+{{post.up_votes}}</p>
-            <button type="button" class="downvoteBtn" ng-click="downvotePost(post, post.id)">▼</button>
+            <button type="button" class="downvoteBtn" ng-click="downvotePost(post, post.id, $index)" ng-disabled='post.disableDownVote'>▼</button>
             <p>-{{post.down_votes}}</p>
           </div>
         </div>

@@ -23,26 +23,44 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 			$scope.posts = detroitFactory.returnList();
 		})
 	}
-	$scope.upvotePost = function(post, id) {
-		console.log(post, id)
+	$scope.upvotePost = function(post, id, index) {
+    	console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
-			console.log('sending data back');
 			$scope.posts = detroitFactory.returnList();
-		})
+			//disables the upvote button for 12 seconds
+			$scope.posts[index].disableUpVote = true;
+			setTimeout(function(){
+				$scope.$apply(function(){
+			 	$scope.posts[index].disableUpVote = false;
+					
+			 	})
+			 }, 12000)
+
+		});
 	}
 
-	$scope.downvotePost = function(post, id){
+		$scope.downvotePost = function(post, id, index){
 		console.log(post, id)
 		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
+			//disables the downvote button for 12 seconds
+			$scope.posts[index].disableDownVote = true;
+			setTimeout(function(){
+				$scope.$apply(function(){
+			 	$scope.posts[index].disableDownVote = false;
+					
+			 	})
+			 }, 12000)
+
 		})
-	}
+	};
 });
 //-----END------
 
 
 //BEGIN DOWNTOWN CONTROLLER
 app.controller('downtown', function($scope, detroitFactory, $rootScope){
+	$scope.posts = [];
 	$scope.areaName = "Downtown"
 	$scope.thisZip = "48226"
 	if($scope.thisZip === $rootScope.zip) {
@@ -64,20 +82,40 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 		})
 	}
 
-	$scope.upvotePost = function(post, id) {
-		console.log(post, id)
+	$scope.upvotePost = function(post, id, index) {
+    	console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
-			console.log('sending data back');
 			$scope.posts = detroitFactory.returnList();
-		})
+			//disables the upvote button for 12 seconds
+			$scope.posts[index].disableUpVote = true;
+			setTimeout(function(){
+				$scope.$apply(function(){
+			 	$scope.posts[index].disableUpVote = false;
+					
+			 	})
+			 }, 12000)
+
+		});
 	}
 
-	$scope.downvotePost = function(post, id){
+
+	$scope.downvotePost = function(post, id, index){
 		console.log(post, id)
 		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
+			//disables the downvote button for 12 seconds
+			$scope.posts[index].disableDownVote = true;
+			setTimeout(function(){
+				$scope.$apply(function(){
+			 	$scope.posts[index].disableDownVote = false;
+					
+			 	})
+			 }, 12000)
+
 		})
-	}
+	};
+
+
 });
 //-----END------
 
@@ -104,20 +142,37 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 			$scope.posts = detroitFactory.returnList();
 		})
 	}
-	$scope.upvotePost = function(post, id) {
-		console.log(post, id)
+	$scope.upvotePost = function(post, id, index) {
+    	console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
-			console.log('sending data back');
 			$scope.posts = detroitFactory.returnList();
-		})
+			//disables the upvote button for 12 seconds
+			$scope.posts[index].disableUpVote = true;
+			setTimeout(function(){
+				$scope.$apply(function(){
+			 	$scope.posts[index].disableUpVote = false;
+					
+			 	})
+			 }, 12000)
+
+		});
 	}
 
-	$scope.downvotePost = function(post, id){
+		$scope.downvotePost = function(post, id, index){
 		console.log(post, id)
 		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
+			//disables the downvote button for 12 seconds
+			$scope.posts[index].disableDownVote = true;
+			setTimeout(function(){
+				$scope.$apply(function(){
+			 	$scope.posts[index].disableDownVote = false;
+					
+			 	})
+			 }, 12000)
+
 		})
-	}
+	};
 });
 //-----END------
 
@@ -143,20 +198,37 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 			$scope.posts = detroitFactory.returnList();
 		})
 	}
-	$scope.upvotePost = function(post, id) {
-		console.log(post, id)
+	$scope.upvotePost = function(post, id, index) {
+    	console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
-			console.log('sending data back');
 			$scope.posts = detroitFactory.returnList();
-		})
+			//disables the upvote button for 12 seconds
+			$scope.posts[index].disableUpVote = true;
+			setTimeout(function(){
+				$scope.$apply(function(){
+			 	$scope.posts[index].disableUpVote = false;
+					
+			 	})
+			 }, 12000)
+
+		});
 	}
 
-	$scope.downvotePost = function(post, id){
+		$scope.downvotePost = function(post, id, index){
 		console.log(post, id)
 		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
+			//disables the downvote button for 12 seconds
+			$scope.posts[index].disableDownVote = true;
+			setTimeout(function(){
+				$scope.$apply(function(){
+			 	$scope.posts[index].disableDownVote = false;
+					
+			 	})
+			 }, 12000)
+
 		})
-	}
+	};
 });
 //-----END------
 
@@ -183,20 +255,37 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 			$scope.posts = detroitFactory.returnList();
 		})
 	}
-	$scope.upvotePost = function(post, id) {
-		console.log(post, id)
+	$scope.upvotePost = function(post, id, index) {
+    	console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
-			console.log('sending data back');
 			$scope.posts = detroitFactory.returnList();
-		})
+			//disables the upvote button for 12 seconds
+			$scope.posts[index].disableUpVote = true;
+			setTimeout(function(){
+				$scope.$apply(function(){
+			 	$scope.posts[index].disableUpVote = false;
+					
+			 	})
+			 }, 12000)
+
+		});
 	}
 
-	$scope.downvotePost = function(post, id){
+		$scope.downvotePost = function(post, id, index){
 		console.log(post, id)
 		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
+			//disables the downvote button for 12 seconds
+			$scope.posts[index].disableDownVote = true;
+			setTimeout(function(){
+				$scope.$apply(function(){
+			 	$scope.posts[index].disableDownVote = false;
+					
+			 	})
+			 }, 12000)
+
 		})
-	}
+	};
 });
 //-----END------
 
@@ -223,20 +312,37 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 			$scope.posts = detroitFactory.returnList();
 		})
 	}
-	$scope.upvotePost = function(post, id) {
-		console.log(post, id)
+	$scope.upvotePost = function(post, id, index) {
+    	console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
-			console.log('sending data back');
 			$scope.posts = detroitFactory.returnList();
-		})
+			//disables the upvote button for 12 seconds
+			$scope.posts[index].disableUpVote = true;
+			setTimeout(function(){
+				$scope.$apply(function(){
+			 	$scope.posts[index].disableUpVote = false;
+					
+			 	})
+			 }, 12000)
+
+		});
 	}
 
-	$scope.downvotePost = function(post, id){
+	$scope.downvotePost = function(post, id, index){
 		console.log(post, id)
 		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
+			//disables the downvote button for 12 seconds
+			$scope.posts[index].disableDownVote = true;
+			setTimeout(function(){
+				$scope.$apply(function(){
+			 	$scope.posts[index].disableDownVote = false;
+					
+			 	})
+			 }, 12000)
+
 		})
-	}
+	};
 
 });
 //-----END------
@@ -264,23 +370,49 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 			$scope.posts = detroitFactory.returnList();
 		})
 	}
-	$scope.upvotePost = function(post, id) {
-		console.log(post, id)
+	$scope.upvotePost = function(post, id, index) {
+    	console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
-			console.log('sending data back');
 			$scope.posts = detroitFactory.returnList();
-		})
+			//disables the upvote button for 12 seconds
+			$scope.posts[index].disableUpVote = true;
+			setTimeout(function(){
+				$scope.$apply(function(){
+			 	$scope.posts[index].disableUpVote = false;
+					
+			 	})
+			 }, 12000)
+
+		});
 	}
 
-	$scope.downvotePost = function(post, id){
+	$scope.downvotePost = function(post, id, index){
 		console.log(post, id)
 		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
+			//disables the downvote button for 12 seconds
+			$scope.posts[index].disableDownVote = true;
+			setTimeout(function(){
+				$scope.$apply(function(){
+			 	$scope.posts[index].disableDownVote = false;
+					
+			 	})
+			 }, 12000)
+
 		})
-	}
+	};
 });
 //-----END------
 
+
+//----controller for redirect over undefined/out of range page
+
+app.controller('sorry', function($scope){
+	$scope.areaName = 'Whoops!'
+})
+
+
+//---end
 /*
 	Downtown: 48226
 	Corktown: 48216
