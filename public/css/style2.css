@@ -3,6 +3,11 @@ body {
   width: 100%;
 }
 
+@font-face {
+  font-family: "Marck Script";
+  src: url("../fonts/MarckScript-Regular.ttf");
+}
+
 .title {
   text-align: center;
   /*max width is set to 1k px so it looks a little bit more neat on larger screen resolutions*/
@@ -44,6 +49,7 @@ body {
   margin-right: 25px;
   background-size: 125px;
   background-repeat: repeat;
+  height: 100%;
 }
 
 
