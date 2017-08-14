@@ -191,6 +191,8 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 
 		})
 	};
+
+	$scope.myBackgroundUrl = "../images/midtown.jpg"
 });
 //-----END------
 
@@ -252,6 +254,8 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 
 		})
 	};
+
+	$scope.myBackgroundUrl = "../images/woodbridge.jpg"
 });
 //-----END------
 
@@ -314,6 +318,7 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 
 		})
 	};
+	$scope.myBackgroundUrl = "../images/newcenter.jpg"
 });
 //-----END------
 
@@ -378,6 +383,8 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 		})
 	};
 
+	$scope.myBackgroundUrl = "../images/eastcentral.jpg"
+
 });
 //-----END------
 
@@ -441,6 +448,8 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 
 		})
 	};
+
+	$scope.myBackgroundUrl = "../images/southwest.jpg"
 });
 //-----END------
 
@@ -449,6 +458,7 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 
 app.controller('sorry', function($scope){
 	$scope.areaName = 'Whoops!'
+	$scope.myBackgroundUrl = "../images/tumbleweed.jpg"
 })
 
 
