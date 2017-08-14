@@ -3,11 +3,6 @@ body {
   width: 100%;
 }
 
-@font-face {
-  font-family: "Marck Script";
-  src: url("../fonts/MarckScript-Regular.ttf");
-}
-
 .title {
   text-align: center;
   /*max width is set to 1k px so it looks a little bit more neat on larger screen resolutions*/
@@ -298,3 +293,29 @@ body {
  #positiveVibes{
    font-size: 24px;
  }
+
+
+
+
+ /*.onFire{
+   animation: pulsate 1s ease-in-out infinite both;
+   -webkit-font-smoothing: antialiased
+ }@keyframes pulsate {
+   0% {
+     transform: scale(.99);
+   }50% {
+     transform: scale(1);
+   }100% {
+     transform: scale(.99);
+   }
+ }*/
+
+ .onFire{
+  animation-name: rotate2;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}@keyframes rotate2 {
+    0%   {border:2px solid red;}
+    50%  {border:2px solid orange;}
+    100% {border:2px solid red;}
+}

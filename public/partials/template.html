@@ -21,7 +21,7 @@
   </div>
   <div ng-repeat="post in posts">
 	 <div class="col-xs-12 col-md-4">
-        <div class="post col-xs-12 col-md-12">
+        <div class="post col-xs-12 col-md-12" ng-class="{onFire: (post.up_votes - post.down_votes) >= 10}">
           <div class="textArea col-xs-10 col-md-10">
             <p>{{post.post}}</p>
           </div>
