@@ -20,12 +20,16 @@ var postList = [];
 			url: '/getposts/' + zip
 		}).then(function(response){
 			postList = response.data;
-			console.log(postList);
+			//console.log(postList);
 		});
 		return p;
 	}
 
 	function returnList(){
+		postList.forEach(function(x){
+			x.upClicked = false
+			x.downClicked = false
+		})
 		return postList;
 	}
 
@@ -48,13 +52,14 @@ var postList = [];
 	*/
 	function success(pos) {
 		var crd = pos.coords;
-		console.log(crd.latitude)
-		console.log(crd.longitude)
+		//console.log(crd.latitude)
+		//console.log(crd.longitude)
 		$http({
 			method: 'GET',
 			url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + crd.latitude + ',' + crd.longitude + '&key=AIzaSyDPVrV4R_jLLWAIQe4zPaIJaNSEJGiRwYM'
 		}).then(function successfulCallback(response){
-			zip = response.data.results[4].address_components[0].long_name
+			//console.log(response.data.results[0].address_components[7].long_name)
+			zip = response.data.results[0].address_components[7].long_name
 		});
 	}
 
@@ -73,8 +78,8 @@ var postList = [];
 		return zip
 	}
 
-	
-	
+
+
 	function addPost(newPost) {
    	return $http({
    	   url: '/post',
@@ -110,6 +115,7 @@ var postList = [];
   	})
   	return prom;
   }
+
 
 	/*
 	Downtown: 48226
