@@ -1,6 +1,7 @@
 <div ng-hide="formHide" class="inputDiv">
    <form ng-submit="newPost(content); blockProf(content.post)">
-    <textarea class="inputTextArea" placeholder="{{placeholder}}" maxlength="160" ng-model="content.post"></textarea>
+     <textarea class="inputTextArea" ng-trim="false" placeholder="{{placeholder}}" maxlength="160" ng-model="content.post"></textarea>
+    <span>{{160 - content.post.length}} left</span>
     <button type="button" name="button" ng-click = "formHide = true" class="cancelBtn inputBtns">Cancel</button>
     <button type="submit" name="button" class="submitBtn inputBtns" ng-click="formHide = true" ng-disabled="hide">Submit</button>
   </form>
