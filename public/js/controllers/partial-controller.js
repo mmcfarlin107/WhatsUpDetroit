@@ -59,6 +59,8 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 
 		})
 	};
+
+	$scope.myBackgroundUrl = "../images/corktown.jpg"
 });
 //-----END------
 
@@ -123,6 +125,8 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 
 		})
 	};
+
+	$scope.myBackgroundUrl = "../images/downtown.jpeg"
 
 
 });
