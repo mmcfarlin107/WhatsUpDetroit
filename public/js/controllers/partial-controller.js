@@ -68,6 +68,7 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 	$scope.posts = [];
 	$scope.areaName = "Downtown"
 	$scope.thisZip = "48226"
+	$scope.blockProf=detroitFactory.blockProf;
 	if($scope.thisZip === $rootScope.zip) {
 		$scope.hide = false
 		$scope.placeholder = "what's on your mind?"
