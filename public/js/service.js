@@ -1,6 +1,6 @@
 var app = angular.module('detroitMod');
 
-app.factory('detroitFactory', function($http, $location){
+app.factory('detroitFactory', function($http, $location, $rootScope){
 
 var postList = [];
 
@@ -93,8 +93,11 @@ var postList = [];
 				"Accept": "application/json"
 			}
 		}).then(function(result){
-			data=result.data
+			var data = {};
+			data.post = result.data.result;
+			data.zip = $rootScope.zip;
 			console.log(data);
+			addPost(data);
 		});
 		return p;
 	}
@@ -109,8 +112,6 @@ var postList = [];
       console.log(postList)
     })
   }
-
-
 
   function voteUp(post, id) {
   	console.log('talking to service')
