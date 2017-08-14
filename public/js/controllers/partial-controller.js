@@ -20,7 +20,7 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 	$scope.newPost = function(content) {
 		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
+		detroitFactory.blockProf(content.post).then(function(){
 			$scope.posts = detroitFactory.returnList();
 
 
@@ -154,7 +154,7 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 	$scope.newPost = function(content) {
 		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
+		detroitFactory.blockProf(content.post).then(function(){
 			$scope.posts = detroitFactory.returnList();
 
 
@@ -217,7 +217,7 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 	$scope.newPost = function(content) {
 		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
+		detroitFactory.blockProf(content.post).then(function(){
 			$scope.posts = detroitFactory.returnList();
 
 
@@ -282,7 +282,7 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 	$scope.newPost = function(content) {
 		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
+		detroitFactory.blockProf(content.post).then(function(){
 			$scope.posts = detroitFactory.returnList();
 
 
@@ -346,7 +346,7 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 	$scope.newPost = function(content) {
 		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
+		detroitFactory.blockProf(content.post).then(function(){
 			$scope.posts = detroitFactory.returnList();
 
 
@@ -413,7 +413,7 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 	$scope.newPost = function(content) {
 		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
+		detroitFactory.blockProf(content.post).then(function(){
 			$scope.posts = detroitFactory.returnList();
 
 
