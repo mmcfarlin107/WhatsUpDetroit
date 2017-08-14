@@ -173,7 +173,6 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 
 	$scope.myBackgroundUrl = "../images/downtown.jpeg"
 
-
 });
 //-----END------
 
