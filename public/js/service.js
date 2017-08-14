@@ -8,6 +8,7 @@ var postList = [];
 		getLocation: getLocation,
 		getZip: getZip,
 		getPosts: getPosts,
+		getPopular: getPopular,
 		addPost: addPost,
 		voteUp: voteUp,
 		voteDown: voteDown,
@@ -24,6 +25,18 @@ var postList = [];
 		});
 		return p;
 	}
+
+	function getPopular (){
+		var p = $http({
+			method: 'GET',
+			url: '/popular/'
+		}).then(function(response){
+			postList = response.data;
+		});
+		return p;
+	}
+
+
 
 	function returnList(){
 		postList.forEach(function(x){
