@@ -46,13 +46,15 @@ body {
   background-repeat: repeat;
 }
 
+
+
 .whatsUp{
   /*this class is for the div that holds the dropdown menu and the submit post button.*/
+  margin-top: 20px;
+  margin-left: 20px;
   font-family: 'arial';
   width: 270px;
-  height: 180px;
   text-align: center;
-  background-color: rgba(250, 235, 215, 0.75);
   border-radius: 10px;
   position: relative;
   z-index: 50;
@@ -62,12 +64,14 @@ body {
 
 .dropbtn {
   /*this is the actual button that says "what are people thinking in..."*/
-    background-color: cyan;
+    background-color: #400303;
+    box-shadow: 2px 2px 2px rgba(120,120,120,0.9);
     color: white;
+    border-color: #400303;
     padding: 16px;
     font-size: 16px;
     width: 240px;
-    border-radius: 10px;
+    border-radius: 2px;
     display: block;
     margin: auto;
 }
@@ -109,13 +113,16 @@ body {
     background-color: #00bfff;
 }
 .submitPost{
-  padding: 16px;
-  font-size: 16px;
-  width: 240px;
-  height: 80px;
-  background-color: cyan;
-  color: white;
-  border-radius: 10px;
+    background-color: #400303;
+    box-shadow: 2px 2px 2px rgba(180,180,180,0.9);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 240px;
+    border-radius: 2px;
+    border-color: #400303;
+    display: block;
+    margin: auto;
 }
 
 
@@ -124,11 +131,12 @@ body {
   width: 90%;
   max-width: 400px;
   min-height: 170px;
-  background-color: cyan;
+  background-color: #400303;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-radius: 10px;
+  border-color: #400303;
+  border-radius: 2px;
   top: 30%;
   position: fixed;
   left: 50%;
@@ -156,7 +164,7 @@ body {
 
 .post {
   border-radius: 2px;
-  background-color: rgba(220,220,220,0.8);
+  background-color: rgba(220,220,220,0.9);
   margin-bottom: 20px;
   box-shadow: 5px 5px 5px rgba(100,100,100,0.9);
 }
