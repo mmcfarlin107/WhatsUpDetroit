@@ -44,6 +44,7 @@ body {
   margin-right: 25px;
   background-size: 125px;
   background-repeat: repeat;
+  height: 100vh;
 }
 
 
@@ -284,11 +285,11 @@ body {
 .loading{
   font-size: 16px;
   text-align: center;
-  background-color: white;
-  width: 400px;
-  height: 150px;
-  margin: 0px auto;
+  background-color: rgba(220,220,220,0.9);
+  vertical-align: center;
+  margin: 25%;
+
 }
  #positiveVibes{
-   font-size: 16px;
+   font-size: 24px;
  }

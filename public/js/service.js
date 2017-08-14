@@ -20,7 +20,6 @@ var postList = [];
 			url: '/getposts/' + zip
 		}).then(function(response){
 			postList = response.data;
-			//console.log(postList);
 		});
 		return p;
 	}
