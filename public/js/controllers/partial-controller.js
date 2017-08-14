@@ -1,6 +1,49 @@
 var app = angular.module('detroitMod');
 
 
+//Most Popular Controller
+
+app.controller('popularCtrl', function($scope,detroitFactory,$rootScope){
+$scope.areaName = "Most Popular";
+detroitFactory.getPopular().then(function(){
+	$scope.posts = detroitFactory.returnList();
+});
+
+$scope.upvotePost = function(post, id, index) {
+		console.log(post, id, index);
+	detroitFactory.voteUp(post, id).then(function(){
+		$scope.posts = detroitFactory.returnList();
+		//disables the upvote button for 12 seconds
+		$scope.posts[index].disableUpVote = true;
+		setTimeout(function(){
+			$scope.$apply(function(){
+			$scope.posts[index].disableUpVote = false;
+
+			})
+		 }, 12000)
+
+	});
+}
+
+	$scope.downvotePost = function(post, id, index){
+	console.log(post, id)
+	detroitFactory.voteDown(post, id).then(function(){
+		$scope.posts = detroitFactory.returnList();
+		//disables the downvote button for 12 seconds
+		$scope.posts[index].disableDownVote = true;
+		setTimeout(function(){
+			$scope.$apply(function(){
+			$scope.posts[index].disableDownVote = false;
+
+			})
+		 }, 12000)
+
+	})
+};
+
+
+});
+
 //BEGIN CORKTOWN CONTROLLER
 app.controller('corktown', function($scope, detroitFactory, $rootScope){
 	$scope.areaName = "Corktown"

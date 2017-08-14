@@ -9,6 +9,12 @@ route.get('/home', function(req, res, next) {
    });
 });
 
+route.get('/popular', function(req, res, next) {
+  pool.query('SELECT * FROM post_content ORDER BY up_votes DESC limit 15').then(function(result) {
+    res.json(result.rows);
+   });
+});
+
 route.get('/getposts/:zip', function(req, res, next) {
     var zip = req.params.zip
     console.log(zip)
