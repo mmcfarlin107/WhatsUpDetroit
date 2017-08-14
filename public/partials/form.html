@@ -1,9 +1,10 @@
 <div ng-hide="formHide" class="inputDiv">
    <form ng-submit="newPost(content)">
-    <textarea class="inputTextArea" ng-trim="false" placeholder="{{placeholder}}" maxlength="160" ng-model="content.post"></textarea>
-    <span>{{160 - content.post.length}} left</span>
+       <textarea class="inputTextArea" ng-trim="false" placeholder="{{placeholder}}" maxlength="160" ng-model="content.post" ng-disabled="hide">
+       </textarea>
+       <span ng-hide="hide" id="countdown">{{160 - content.post.length}} remaining characters</span>
     <button type="button" name="button" ng-click = "formHide = true" class="cancelBtn inputBtns">Cancel</button>
-    <button type="submit" name="button" class="submitBtn inputBtns" ng-click="formHide = true" ng-disabled="hide">Submit</button>
+    <button type="submit" name="button" class="submitBtn inputBtns" ng-click="formHide = true" ng-hide="hide">Submit</button>
   </form>
 
 </div>
