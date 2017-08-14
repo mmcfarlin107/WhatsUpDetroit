@@ -9,12 +9,10 @@ body {
 }
 
 
-
 @font-face {
   font-family: "Marck Script";
   src: url("../fonts/MarckScript-Regular.ttf");
 }
-
 
 
 .title {
@@ -53,7 +51,6 @@ body {
 }
 
 
-
 .whatsUp{
   /*this class is for the div that holds the dropdown menu and the submit post button.*/
   font-family: 'arial';
@@ -66,7 +63,6 @@ body {
   z-index: 50;
   text-align: center;
 }
-
 
 /*animation to fade in the whatsup div*/
 .whatsUp {
@@ -87,7 +83,6 @@ body {
     opacity: 1;
   }
 }
-
 
 
 .dropbtn {
@@ -142,7 +137,6 @@ body {
 }
 
 
-
 .postArea {
   position: relative;
   z-index: 0;
@@ -170,7 +164,6 @@ body {
             transform: translateY(0);
   }
 }
-
 
 
 .post {
