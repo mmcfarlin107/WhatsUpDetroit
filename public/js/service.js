@@ -11,7 +11,8 @@ var postList = [];
 		addPost: addPost,
 		voteUp: voteUp,
 		voteDown: voteDown,
-		returnList: returnList
+		returnList: returnList,
+		blockProf:blockProf
 	}
 
 	function getPosts (zip){
@@ -55,16 +56,7 @@ var postList = [];
 			url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + crd.latitude + ',' + crd.longitude + '&key=AIzaSyDPVrV4R_jLLWAIQe4zPaIJaNSEJGiRwYM'
 		}).then(function successfulCallback(response){
 			zip = response.data.results[4].address_components[0].long_name
-<<<<<<< HEAD
-			pleaseWait.finish();
-			// switch(zip) {
-			// 	case 48226:
-			// 		$location.path('/downtown')
-			//
-			// }
 
-=======
->>>>>>> master
 		});
 	}
 
@@ -120,6 +112,39 @@ var postList = [];
   	})
   	return prom;
   }
+
+//trying to get the profanity API to work 
+function blockProf(content){
+	var words= ['puppies', 'rainbow', 'unicorn', 'tigers', 'kittens', 'beautiful', 'leprechaun', 'cookies',
+	'sunshine', 'brownie', 'spirit', 'heart', 'love', 'taco', 'jazz', 'awesome', 'sparkle'];
+	var wordReplace = words[Math.floor(Math.random() * words.length)];
+	// var inputArea = document.getElementbyId('inputArea').value;
+	var p= $http({
+		method: 'GET',
+		url: 'https://community-purgomalum.p.mashape.com/json?fill_text=' + wordReplace + '&text=' + content,
+		headers:{
+			"X-Mashape-Key": "98M34VsMZrmshKpU82TTSAgyvWv6p1b9BZsjsnxdtc5Jidg4TW",
+			"Accept": "application/json"
+		}
+	}).then(function(result){
+		data=result.data
+		console.log(data);
+	});
+	return p;
+}
+
+}).function addPost(newPost) {
+	return $http({
+		 url: '/post',
+		 method: 'POST',
+		 data: newPost
+	}).then(function(response){
+		postList = response.data
+		console.log(postList)
+	})
+};
+
+
 
 	/*
 	Downtown: 48226
@@ -196,5 +221,3 @@ var postList = [];
 		return p;
 	}
 	*/
-
-});
