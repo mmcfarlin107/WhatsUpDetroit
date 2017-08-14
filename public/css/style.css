@@ -260,7 +260,7 @@ body {
 
 
 .textArea{
-  overflow: auto;
+  word-wrap: break-word;
 }
 
 .spinner {
