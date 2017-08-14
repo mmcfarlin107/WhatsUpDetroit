@@ -4,9 +4,11 @@
 body {
   margin-top: 15px;
   margin-bottom: 15px;
+  width: 100%
+}
+.loadscreen {
   background: url('../images/timelapse.gif') no-repeat center center fixed;
   background-size: cover;
-  width: 100%
 }
 
 /*.navcontainer{
