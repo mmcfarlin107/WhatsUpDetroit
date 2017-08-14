@@ -54,6 +54,10 @@ $routeProvider
       controller: 'midtown',
       templateUrl: 'partials/midtown.html'
     })
+    .when('/sorry', {
+      controller: 'sorry',
+      templateUrl: 'partials/sorry.html'
+    })
     .otherwise({
       redirectTo: '/home'
     })

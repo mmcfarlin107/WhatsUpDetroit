@@ -21,12 +21,16 @@ var postList = [];
 			url: '/getposts/' + zip
 		}).then(function(response){
 			postList = response.data;
-			console.log(postList);
+			//console.log(postList);
 		});
 		return p;
 	}
 
 	function returnList(){
+		postList.forEach(function(x){
+			x.upClicked = false
+			x.downClicked = false
+		})
 		return postList;
 	}
 
@@ -49,14 +53,19 @@ var postList = [];
 	*/
 	function success(pos) {
 		var crd = pos.coords;
-		console.log(crd.latitude)
-		console.log(crd.longitude)
+		//console.log(crd.latitude)
+		//console.log(crd.longitude)
 		$http({
 			method: 'GET',
 			url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + crd.latitude + ',' + crd.longitude + '&key=AIzaSyDPVrV4R_jLLWAIQe4zPaIJaNSEJGiRwYM'
 		}).then(function successfulCallback(response){
+<<<<<<< HEAD
 			zip = response.data.results[4].address_components[0].long_name
 
+=======
+			//console.log(response.data.results[0].address_components[7].long_name)
+			zip = response.data.results[0].address_components[7].long_name
+>>>>>>> master
 		});
 	}
 
@@ -113,25 +122,6 @@ var postList = [];
   	return prom;
   }
 
-//trying to get the profanity API to work
-function blockProf(content){
-	var words= ['puppies', 'rainbow', 'unicorn', 'tigers', 'kittens', 'beautiful', 'leprechaun', 'cookies',
-	'sunshine', 'brownie', 'spirit', 'heart', 'love', 'taco', 'jazz', 'awesome', 'sparkle'];
-	var wordReplace = words[Math.floor(Math.random() * words.length)];
-	// var inputArea = document.getElementbyId('inputArea').value;
-	var p= $http({
-		method: 'GET',
-		url: 'https://community-purgomalum.p.mashape.com/json?fill_text=' + wordReplace + '&text=' + content,
-		headers:{
-			"X-Mashape-Key": "98M34VsMZrmshKpU82TTSAgyvWv6p1b9BZsjsnxdtc5Jidg4TW",
-			"Accept": "application/json"
-		}
-	}).then(function(result){
-		data=result.data
-		console.log(data);
-	});
-	return p;
-}
 
 	/*
 	Downtown: 48226

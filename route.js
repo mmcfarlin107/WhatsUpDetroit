@@ -19,7 +19,7 @@ route.get('/getposts/:zip', function(req, res, next) {
 
 route.post('/post', function(req, res, next){
   var data = req.body;
-  pool.query('insert into post_content (post, zip, up_votes, down_votes, score) values ($1::text, $2::text, $3::int, $4::int, $5::int)', [data.post, data.zip, 0, 0, 0]).then(function(){
+  pool.query('insert into post_content (post, zip, up_votes, down_votes, score, upvoted, downvoted) values ($1::text, $2::text, $3::int, $4::int, $5::int, $6::boolean, $7::boolean)', [data.post, data.zip, 0, 0, 0, null, null]).then(function(){
     pool.query('SELECT * FROM post_content WHERE zip=$1::text and score>$2::int order by id', [data.zip, -10]).then(function(result){
       res.json(result.rows);
       });
@@ -34,11 +34,11 @@ route.put('/upvote/:id', function(req, res, next){
   var score = data.score + 1;
   var zip = data.zip;
 
-  console.log('talking from route')
+  //console.log('talking from route')
   pool.query('update post_content set up_votes = $1::int, score = $2::int where id = $3::int', [upvote, score, id]).then(function(result){
       pool.query('select * from post_content where zip = $1::text and score>$2::int order by id', [zip, -10]).then(function(result){
         res.send(result.rows)
-        console.log(result.rows)
+        //console.log(result.rows)
       });
     });
   });
@@ -50,11 +50,11 @@ route.put('/downvote/:id', function(req, res, next){
   var score = data.score - 1;
   var zip = data.zip;
 
-  console.log('downvote talking from route too')
+  //console.log('downvote talking from route too')
   pool.query('update post_content set down_votes = $1::int, score = $2::int where id = $3::int', [downvote, score, id]).then(function(result){
       pool.query('select * from post_content where zip = $1::text and score>$2::int order by id', [zip, -10]).then(function(result){
         res.send(result.rows);
-        console.log(result.rows);
+        //console.log(result.rows);
       });
    });
 });
