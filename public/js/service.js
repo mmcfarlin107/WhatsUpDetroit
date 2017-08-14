@@ -11,8 +11,7 @@ var postList = [];
 		addPost: addPost,
 		voteUp: voteUp,
 		voteDown: voteDown,
-		returnList: returnList,
-		blcokProf: blockProf
+		returnList: returnList
 	}
 
 	function getPosts (zip){
@@ -79,26 +78,6 @@ var postList = [];
 		return zip
 	}
 
-	//trying to get the profanity API to work
-function blockProf(content){
-		var words= ['puppies', 'rainbow', 'unicorn', 'tigers', 'kittens', 'beautiful', 'leprechaun', 'cookies',
-		'sunshine', 'brownie', 'spirit', 'heart', 'love', 'taco', 'jazz', 'awesome', 'sparkle'];
-		var wordReplace = words[Math.floor(Math.random() * words.length)];
-		// var inputArea = document.getElementbyId('inputArea').value;
-		var p= $http({
-				method: 'GET',
-				url: 'https://community-purgomalum.p.mashape.com/json?fill_text=' + wordReplace + '&text=' + content,
-				headers:{
-						"X-Mashape-Key": "98M34VsMZrmshKpU82TTSAgyvWv6p1b9BZsjsnxdtc5Jidg4TW",
-						"Accept": "application/json"
-				}
-		}).then(function(result){
-				data=result.data
-				console.log(data);
-		});
-		return p;
-}
-
 	function addPost(newPost) {
    	return $http({
    	   url: '/post',
@@ -109,7 +88,6 @@ function blockProf(content){
       console.log(postList)
     })
   }
-
 
   function voteUp(post, id) {
   	console.log('talking to service')
@@ -136,79 +114,3 @@ function blockProf(content){
   }
 
 });
-
-	/*
-	Downtown: 48226
-	Corktown: 48216
-	Woodbridge: 48208
-	New Center: 48202
-	East Central: 48207
-	Southwest: 48209
-	*/
-	/*
-	function getCorktown (){
-		var p = $http({
-			method: 'GET',
-			url: '/corktown'
-		}).then(function(response){
-			postList = response.data;
-			console.log(postList);
-		});
-		return p;
-	}
-
-	function getEastCentral (){
-		var p = $http({
-			method: 'GET',
-			url: '/east-central'
-		}).then(function(response){
-			postList = response.data;
-			console.log(postList);
-		});
-		return p;
-	}
-
-	function getMidtown (){
-		var p = $http({
-			method: 'GET',
-			url: '/midtown'
-		}).then(function(response){
-			postList = response.data;
-			console.log(postList);
-		});
-		return p;
-	}
-
-	function getNewCenter (){
-		var p = $http({
-			method: 'GET',
-			url: '/new-center'
-		}).then(function(response){
-			postList = response.data;
-			console.log(postList);
-		});
-		return p;
-	}
-
-	function getSouthwest (){
-		var p = $http({
-			method: 'GET',
-			url: '/southwest'
-		}).then(function(response){
-			postList = response.data;
-			console.log(postList);
-		});
-		return p;
-	}
-
-	function getWoodbridge (){
-		var p = $http({
-			method: 'GET',
-			url: '/woodbridge'
-		}).then(function(response){
-			postList = response.data;
-			console.log(postList);
-		});
-		return p;
-	}
-	*/
