@@ -11,7 +11,8 @@ var postList = [];
 		addPost: addPost,
 		voteUp: voteUp,
 		voteDown: voteDown,
-		returnList: returnList
+		returnList: returnList,
+		blockProf: blockProf
 	}
 
 	function getPosts (zip){
@@ -77,6 +78,27 @@ var postList = [];
 		return zip
 	}
 
+	//trying to get the profanity API to work
+	function blockProf(content){
+		console.log('works');
+		var words= ['puppies', 'rainbow', 'unicorn', 'tigers', 'kittens', 'beautiful', 'leprechaun', 'cookies',
+		'sunshine', 'brownie', 'spirit', 'heart', 'love', 'taco', 'jazz', 'awesome', 'sparkle'];
+		var wordReplace = words[Math.floor(Math.random() * words.length)];
+		// var inputArea = document.getElementbyId('inputArea').value;
+		var p= $http({
+			method: 'GET',
+			url: 'https://community-purgomalum.p.mashape.com/json?fill_text=' + wordReplace + '&text=' + content,
+			headers:{
+				"X-Mashape-Key": "98M34VsMZrmshKpU82TTSAgyvWv6p1b9BZsjsnxdtc5Jidg4TW",
+				"Accept": "application/json"
+			}
+		}).then(function(result){
+			data=result.data
+			console.log(data);
+		});
+		return p;
+	}
+
 	function addPost(newPost) {
    	return $http({
    	   url: '/post',
@@ -87,6 +109,8 @@ var postList = [];
       console.log(postList)
     })
   }
+
+
 
   function voteUp(post, id) {
   	console.log('talking to service')

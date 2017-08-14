@@ -54,7 +54,14 @@ body {
 .whatsUp{
   /*this class is for the div that holds the dropdown menu and the submit post button.*/
   font-family: 'arial';
+  width: 270px;
+  height: 180px;
+  margin: 10px auto;
+  background-color: rgba(250, 235, 215, 0.75);
+  border-radius: 10px;
+  position: relative;
   z-index: 50;
+  text-align: center;
 }
 
 /*animation to fade in the whatsup div*/

@@ -1,12 +1,25 @@
-<div class="container">
-  <div class="row">
-    <div class="title">
-      <p>{{areaName}}</p>
-    </div>
-  </div>
+<div ng-style="{'background-image':'url({{myBackgroundUrl}})',
+                      'position' : 'relative',
+                      'margin-top' : '50px',
+                      'margin-bottom' : '20px',
+                      'background-position': 'center',
+                      'background-repeat': 'no-repeat',
+                      'background-size': '800px, 800px',
+                      'min-width': '400px',
+                      'min-height': '400px',
+                      'z-index' : '6'
+                      }" class="container">
   
-<div class="container">
-  <div class="col-md-4 col-md-offset-4 whatsUp">
-   	<p>Looks like either something goofed up on our end OR we don't have support for your area yet. Drop us a line and let us know if you want this app in your area!</p>
+      <div  class="title" ng-style="{'margin-bottom': '80px',
+                                    'margin-top': '40px'}">
+          <p>{{areaName}}</p>
+      </div>
+       <div class="col-sm-6 col-sm-offset-3">
+       <p>Looks like either something goofed up on our end OR we don't have support for your area yet. Drop us a line and let us know if you want this app in your area!</p>
+
+       </div>  
+
+ 
  </div>
-</div>
+
+

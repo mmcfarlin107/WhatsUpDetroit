@@ -59,6 +59,8 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 
 		})
 	};
+
+	$scope.myBackgroundUrl = "../images/corktown.jpg"
 });
 //-----END------
 
@@ -68,6 +70,7 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 	$scope.posts = [];
 	$scope.areaName = "Downtown"
 	$scope.thisZip = "48226"
+	$scope.blockProf=detroitFactory.blockProf;
 	if($scope.thisZip === $rootScope.zip) {
 		$scope.hide = false
 		$scope.placeholder = "what's on your mind?"
@@ -123,6 +126,8 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 
 		})
 	};
+
+	$scope.myBackgroundUrl = "../images/downtown.jpeg"
 
 
 });
@@ -186,6 +191,8 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 
 		})
 	};
+
+	$scope.myBackgroundUrl = "../images/midtown.jpg"
 });
 //-----END------
 
@@ -247,6 +254,8 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 
 		})
 	};
+
+	$scope.myBackgroundUrl = "../images/woodbridge.jpg"
 });
 //-----END------
 
@@ -309,6 +318,7 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 
 		})
 	};
+	$scope.myBackgroundUrl = "../images/newcenter.jpg"
 });
 //-----END------
 
@@ -373,6 +383,8 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 		})
 	};
 
+	$scope.myBackgroundUrl = "../images/eastcentral.jpg"
+
 });
 //-----END------
 
@@ -436,6 +448,8 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 
 		})
 	};
+
+	$scope.myBackgroundUrl = "../images/southwest.jpg"
 });
 //-----END------
 
@@ -444,6 +458,7 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 
 app.controller('sorry', function($scope){
 	$scope.areaName = 'Whoops!'
+	$scope.myBackgroundUrl = "../images/tumbleweed.jpg"
 })
 
 

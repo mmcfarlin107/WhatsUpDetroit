@@ -1,23 +1,35 @@
-  <div class="container">
-    <div class="row">
-        <div class="title col-xs-12 col-md-8">
-           <p>{{areaName}}</p>
-        </div>
-        <div class="whatsUp col-xs-12 col-md-4">
-          <button type="button" name="button" class="submitPost" ng-click= "formHide = false">Submit a post</button>
-          <div class="dropdown">
-            <button class="dropbtn"> What are people thinking in... </button>
-              <div class="dropdown-content">
-                <a href="#!/downtown">Downtown</a>
-                <a href="#!/corktown">Corktown</a>
-                <a href="#!/woodbridge">Woodbridge</a>
-                <a href="#!/new-center">New Center</a>
-                <a href="#!/east-central">East Central</a>
-                <a href="#!/southwest">Southwest</a>
-                <a href="#!/midtown">Midtown</a>
+    <div ng-style="{'background-image':'url({{myBackgroundUrl}})',
+                      'position' : 'relative',
+                      'margin-top' : '0px',
+                      'margin-bottom' : '-12px',
+                      'background-position': 'center',
+                      'background-repeat': 'no-repeat',
+                      'background-size': '100%',
+                      'min-width': '400px',
+                      'box-shadow': '5px 0px 5px rgba(70,70,70,0.9)',
+                      'z-index' : '6'
+                      }" class="container imgcontainer">
+        <div class="navcontainer row">
+          <div class="titlecontainer col-xs-12 col-sm-8">
+             <p class="title">{{areaName}}</p>
+          </div>
+          <div class="nav col-xs-12 col-sm-4">
+            <button type="button" name="button" class="submitPost" ng-click= "formHide = false">Submit a post</button>
+            <div class="dropdown">
+              <button class="dropbtn"> What are people thinking in... </button>
+                <div class="dropdown-content">
+                  <a href="#!/downtown">Downtown</a>
+                  <a href="#!/corktown">Corktown</a>
+                  <a href="#!/woodbridge">Woodbridge</a>
+                  <a href="#!/new-center">New Center</a>
+                  <a href="#!/east-central">East Central</a>
+                  <a href="#!/southwest">Southwest</a>
+                  <a href="#!/midtown">Midtown</a>
+                </div>
               </div>
-            </div>
-      </div>
+        </div>
+    </div>
+
   </div>
   <div ng-repeat="post in posts">
 	 <div class="col-xs-12 col-md-4">
