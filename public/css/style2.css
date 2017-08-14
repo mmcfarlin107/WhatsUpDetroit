@@ -366,3 +366,13 @@ body {
   position: relative;
   margin-top: 100px;
 }
+
+.onFire{
+ animation-name: rotate2;
+ animation-duration: 2s;
+ animation-iteration-count: infinite;
+}@keyframes rotate2 {
+   0%   {border:2px solid red;}
+   50%  {border:2px solid orange;}
+   100% {border:2px solid red;}
+}
