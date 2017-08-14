@@ -80,38 +80,38 @@ var postList = [];
 
 	//trying to get the profanity API to work
 	function blockProf(content){
-		console.log('works');
-		var words= ['puppies', 'rainbow', 'unicorn', 'tigers', 'kittens', 'beautiful', 'leprechaun', 'cookies',
-		'sunshine', 'brownie', 'spirit', 'heart', 'love', 'taco', 'jazz', 'awesome', 'sparkle'];
-		var wordReplace = words[Math.floor(Math.random() * words.length)];
-		// var inputArea = document.getElementbyId('inputArea').value;
-		var p= $http({
-			method: 'GET',
-			url: 'https://community-purgomalum.p.mashape.com/json?fill_text=' + wordReplace + '&text=' + content,
-			headers:{
-				"X-Mashape-Key": "98M34VsMZrmshKpU82TTSAgyvWv6p1b9BZsjsnxdtc5Jidg4TW",
-				"Accept": "application/json"
-			}
-		}).then(function(result){
-			var data = {};
-			data.post = result.data.result;
-			data.zip = $rootScope.zip;
-			console.log(data);
-			addPost(data);
-		});
-		return p;
+	  console.log('works');
+	  var words= ['puppies', 'rainbow', 'unicorn', 'tigers', 'kittens', 'beautiful', 'leprechaun', 'cookies',
+	  'sunshine', 'brownie', 'spirit', 'heart', 'love', 'taco', 'jazz', 'awesome', 'sparkle'];
+	  var wordReplace = words[Math.floor(Math.random() * words.length)];
+	  // var inputArea = document.getElementbyId('inputArea').value;
+	  var p= $http({
+	    method: 'GET',
+	    url: 'https://community-purgomalum.p.mashape.com/json?fill_text=' + wordReplace + '&text=' + content,
+	    headers:{
+	      "X-Mashape-Key": "98M34VsMZrmshKpU82TTSAgyvWv6p1b9BZsjsnxdtc5Jidg4TW",
+	      "Accept": "application/json"
+	    }
+	  }).then(function(result){
+	    var data = {};
+	    data.post = result.data.result;
+	    data.zip = $rootScope.zip;
+	    console.log(data);
+	    addPost(data);
+	  });
+	  return p;
 	}
 
 	function addPost(newPost) {
-   	return $http({
-   	   url: '/post',
-       method: 'POST',
-       data: newPost
-    }).then(function(response){
-      postList = response.data
-      console.log(postList)
-    })
-  }
+	  return $http({
+	     url: '/post',
+	     method: 'POST',
+	     data: newPost
+	  }).then(function(response){
+	    postList = response.data
+	    console.log(postList)
+	  })
+	}
 
   function voteUp(post, id) {
   	console.log('talking to service')
