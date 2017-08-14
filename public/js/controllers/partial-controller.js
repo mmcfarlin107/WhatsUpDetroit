@@ -21,8 +21,13 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
 			$scope.posts = detroitFactory.returnList();
+	
+
 		})
 	}
+
+	$scope.formHide = true
+
 	$scope.upvotePost = function(post, id, index) {
     	console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
@@ -73,12 +78,16 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 	detroitFactory.getPosts("48226").then(function(){
 		$scope.posts = detroitFactory.returnList();
 	});
+
+	$scope.formHide = true
+
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
 		content.zip = $rootScope.zip
 		console.log(content.zip)
 		detroitFactory.addPost(content).then(function(){
 			$scope.posts = detroitFactory.returnList();
+		
 		})
 	}
 
@@ -140,8 +149,13 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
 			$scope.posts = detroitFactory.returnList();
+		
+
 		})
 	}
+
+			$scope.formHide = true
+
 	$scope.upvotePost = function(post, id, index) {
     	console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
@@ -196,8 +210,13 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
 			$scope.posts = detroitFactory.returnList();
+			
+
 		})
 	}
+
+	$scope.formHide = true
+
 	$scope.upvotePost = function(post, id, index) {
     	console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
@@ -253,8 +272,13 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
 			$scope.posts = detroitFactory.returnList();
+	
+
 		})
 	}
+
+			$scope.formHide = true
+
 	$scope.upvotePost = function(post, id, index) {
     	console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
@@ -310,8 +334,14 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
 			$scope.posts = detroitFactory.returnList();
+			
+
 		})
 	}
+
+	$scope.formHide = true
+
+
 	$scope.upvotePost = function(post, id, index) {
     	console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
@@ -368,8 +398,14 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
 			$scope.posts = detroitFactory.returnList();
+		
+
 		})
 	}
+
+			$scope.formHide = true
+
+
 	$scope.upvotePost = function(post, id, index) {
     	console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
