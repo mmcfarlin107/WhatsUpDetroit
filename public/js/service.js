@@ -78,8 +78,8 @@ var postList = [];
 		return zip
 	}
 
-	
-	
+
+
 	function addPost(newPost) {
    	return $http({
    	   url: '/post',
