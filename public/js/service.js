@@ -113,7 +113,7 @@ var postList = [];
   	return prom;
   }
 
-//trying to get the profanity API to work 
+//trying to get the profanity API to work
 function blockProf(content){
 	var words= ['puppies', 'rainbow', 'unicorn', 'tigers', 'kittens', 'beautiful', 'leprechaun', 'cookies',
 	'sunshine', 'brownie', 'spirit', 'heart', 'love', 'taco', 'jazz', 'awesome', 'sparkle'];
@@ -132,19 +132,6 @@ function blockProf(content){
 	});
 	return p;
 }
-
-}).function addPost(newPost) {
-	return $http({
-		 url: '/post',
-		 method: 'POST',
-		 data: newPost
-	}).then(function(response){
-		postList = response.data
-		console.log(postList)
-	})
-};
-
-
 
 	/*
 	Downtown: 48226
