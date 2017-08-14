@@ -20,7 +20,6 @@ var postList = [];
 			url: '/getposts/' + zip
 		}).then(function(response){
 			postList = response.data;
-			//console.log(postList);
 		});
 		return p;
 	}
@@ -115,82 +114,5 @@ var postList = [];
   	})
   	return prom;
   }
-
-
-	/*
-	Downtown: 48226
-	Corktown: 48216
-	Woodbridge: 48208
-	New Center: 48202
-	East Central: 48207
-	Southwest: 48209
-	*/
-	/*
-	function getCorktown (){
-		var p = $http({
-			method: 'GET',
-			url: '/corktown'
-		}).then(function(response){
-			postList = response.data;
-			console.log(postList);
-		});
-		return p;
-	}
-
-	function getEastCentral (){
-		var p = $http({
-			method: 'GET',
-			url: '/east-central'
-		}).then(function(response){
-			postList = response.data;
-			console.log(postList);
-		});
-		return p;
-	}
-
-	function getMidtown (){
-		var p = $http({
-			method: 'GET',
-			url: '/midtown'
-		}).then(function(response){
-			postList = response.data;
-			console.log(postList);
-		});
-		return p;
-	}
-
-	function getNewCenter (){
-		var p = $http({
-			method: 'GET',
-			url: '/new-center'
-		}).then(function(response){
-			postList = response.data;
-			console.log(postList);
-		});
-		return p;
-	}
-
-	function getSouthwest (){
-		var p = $http({
-			method: 'GET',
-			url: '/southwest'
-		}).then(function(response){
-			postList = response.data;
-			console.log(postList);
-		});
-		return p;
-	}
-
-	function getWoodbridge (){
-		var p = $http({
-			method: 'GET',
-			url: '/woodbridge'
-		}).then(function(response){
-			postList = response.data;
-			console.log(postList);
-		});
-		return p;
-	}
-	*/
 
 });
