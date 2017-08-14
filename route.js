@@ -10,7 +10,7 @@ route.get('/home', function(req, res, next) {
 });
 
 route.get('/popular', function(req, res, next) {
-  pool.query('SELECT * FROM post_content ORDER BY up_votes DESC limit 15').then(function(result) {
+  pool.query('SELECT * FROM post_content WHERE score>$1::int ORDER BY up_votes DESC limit 15', [-10]).then(function(result) {
     res.json(result.rows);
    });
 });
