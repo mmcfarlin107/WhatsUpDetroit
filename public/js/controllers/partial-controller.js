@@ -21,7 +21,7 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
 			$scope.posts = detroitFactory.returnList();
-	
+
 
 		})
 	}
@@ -37,7 +37,7 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 			setTimeout(function(){
 				$scope.$apply(function(){
 			 	$scope.posts[index].disableUpVote = false;
-					
+
 			 	})
 			 }, 12000)
 
@@ -53,7 +53,7 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 			setTimeout(function(){
 				$scope.$apply(function(){
 			 	$scope.posts[index].disableDownVote = false;
-					
+
 			 	})
 			 }, 12000)
 
@@ -87,7 +87,7 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 		console.log(content.zip)
 		detroitFactory.addPost(content).then(function(){
 			$scope.posts = detroitFactory.returnList();
-		
+
 		})
 	}
 
@@ -100,7 +100,7 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 			setTimeout(function(){
 				$scope.$apply(function(){
 			 	$scope.posts[index].disableUpVote = false;
-					
+
 			 	})
 			 }, 12000)
 
@@ -117,7 +117,7 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 			setTimeout(function(){
 				$scope.$apply(function(){
 			 	$scope.posts[index].disableDownVote = false;
-					
+
 			 	})
 			 }, 12000)
 
@@ -149,7 +149,7 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
 			$scope.posts = detroitFactory.returnList();
-		
+
 
 		})
 	}
@@ -165,7 +165,7 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 			setTimeout(function(){
 				$scope.$apply(function(){
 			 	$scope.posts[index].disableUpVote = false;
-					
+
 			 	})
 			 }, 12000)
 
@@ -181,7 +181,7 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 			setTimeout(function(){
 				$scope.$apply(function(){
 			 	$scope.posts[index].disableDownVote = false;
-					
+
 			 	})
 			 }, 12000)
 
@@ -210,7 +210,7 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
 			$scope.posts = detroitFactory.returnList();
-			
+
 
 		})
 	}
@@ -226,7 +226,7 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 			setTimeout(function(){
 				$scope.$apply(function(){
 			 	$scope.posts[index].disableUpVote = false;
-					
+
 			 	})
 			 }, 12000)
 
@@ -242,7 +242,7 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 			setTimeout(function(){
 				$scope.$apply(function(){
 			 	$scope.posts[index].disableDownVote = false;
-					
+
 			 	})
 			 }, 12000)
 
@@ -272,7 +272,7 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
 			$scope.posts = detroitFactory.returnList();
-	
+
 
 		})
 	}
@@ -288,7 +288,7 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 			setTimeout(function(){
 				$scope.$apply(function(){
 			 	$scope.posts[index].disableUpVote = false;
-					
+
 			 	})
 			 }, 12000)
 
@@ -304,7 +304,7 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 			setTimeout(function(){
 				$scope.$apply(function(){
 			 	$scope.posts[index].disableDownVote = false;
-					
+
 			 	})
 			 }, 12000)
 
@@ -334,7 +334,7 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
 			$scope.posts = detroitFactory.returnList();
-			
+
 
 		})
 	}
@@ -351,7 +351,7 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 			setTimeout(function(){
 				$scope.$apply(function(){
 			 	$scope.posts[index].disableUpVote = false;
-					
+
 			 	})
 			 }, 12000)
 
@@ -367,7 +367,7 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 			setTimeout(function(){
 				$scope.$apply(function(){
 			 	$scope.posts[index].disableDownVote = false;
-					
+
 			 	})
 			 }, 12000)
 
@@ -398,7 +398,7 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 		content.zip = $rootScope.zip
 		detroitFactory.addPost(content).then(function(){
 			$scope.posts = detroitFactory.returnList();
-		
+
 
 		})
 	}
@@ -415,7 +415,7 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 			setTimeout(function(){
 				$scope.$apply(function(){
 			 	$scope.posts[index].disableUpVote = false;
-					
+
 			 	})
 			 }, 12000)
 
@@ -431,7 +431,7 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 			setTimeout(function(){
 				$scope.$apply(function(){
 			 	$scope.posts[index].disableDownVote = false;
-					
+
 			 	})
 			 }, 12000)
 
