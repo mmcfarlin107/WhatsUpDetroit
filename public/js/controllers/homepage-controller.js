@@ -6,7 +6,7 @@ app.controller('homeCtrl', function($scope, $rootScope, $location, detroitFactor
 	setTimeout(function () {
         $scope.$apply(function () {
         	//rootScope.zip allows for the zip of the user determined by the factory function below to persist throughout the app
-            $rootScope.zip = "48226"//detroitFactory.getZip();
+            $rootScope.zip = detroitFactory.getZip();
 	            if($rootScope.zip === "48226"){
 				$location.path('/downtown')
 			} else if($rootScope.zip === "48216") {
