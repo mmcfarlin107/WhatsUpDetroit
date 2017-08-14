@@ -1,7 +1,7 @@
 var app = angular.module('detroitMod');
 
 app.directive('postPopulate', function(){
-  
+
   return {
       replace: false,
       restrict: 'E',
@@ -25,6 +25,10 @@ $routeProvider
     .when('/home', {
       controller: 'homeCtrl',
       templateUrl: 'partials/home.html'
+    })
+    .when('/popular', {
+      controller: 'popularCtrl',
+      templateUrl: 'partials/popular.html'
     })
     .when('/downtown', {
       controller: 'downtown',
