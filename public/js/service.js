@@ -77,8 +77,6 @@ var postList = [];
 		return zip
 	}
 
-
-
 	function addPost(newPost) {
    	return $http({
    	   url: '/post',
@@ -89,7 +87,6 @@ var postList = [];
       console.log(postList)
     })
   }
-
 
   function voteUp(post, id) {
   	console.log('talking to service')

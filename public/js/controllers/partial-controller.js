@@ -155,8 +155,7 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 	}
 
 			$scope.formHide = true
-
-	$scope.upvotePost = function(post, id, index) {
+			$scope.upvotePost = function(post, id, index) {
     	console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();

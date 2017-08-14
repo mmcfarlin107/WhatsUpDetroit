@@ -1,14 +1,8 @@
-  <div id="" class="inputDiv hidden">
-  	 <form ng-submit="newPost(content)">
-      <textarea class="inputTextArea" placeholder="{{placeholder}}" maxlength="160" ng-model="content.post"></textarea>
-      <button type="button" name="button" class="cancelBtn inputBtns">Cancel</button>
-      <button type="submit" name="button" class="submitBtn inputBtns" ng-disabled="hide">Submit</button>
-	  </form>
+<div ng-hide="formHide" class="inputDiv">
+   <form ng-submit="newPost(content)">
+    <textarea class="inputTextArea" placeholder="{{placeholder}}" maxlength="160" ng-model="content.post"></textarea>
+    <button type="button" name="button" ng-click = "formHide = true" class="cancelBtn inputBtns">Cancel</button>
+    <button type="submit" name="button" class="submitBtn inputBtns" ng-click="formHide = true" ng-disabled="hide">Submit</button>
+  </form>
 
-  </div>
-
-
-   <!-- <form ng-submit="newPost(content)">
-      <input type="text" ng-model="content.post">
-      <button type="submit"></button>
-    </form> -->
+</div>
