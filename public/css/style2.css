@@ -1,3 +1,5 @@
+/* This was for restyling only */
+
 @import url('https://fonts.googleapis.com/css?family=Ovo');
 @import url('https://fonts.googleapis.com/css?family=Muli');
 
@@ -400,4 +402,3 @@ body {
     background': url('../images/timelapse.gif') no-repeat center center fixed;
     background-size: cover
 }
-
