@@ -303,7 +303,7 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 	};
 
 
-	$scope.myBackgroundUrl = "../images/woodbridge.jpg"
+	$scope.myBackgroundUrl = "../images/woodbridge.png"
 
 });
 //-----END------
