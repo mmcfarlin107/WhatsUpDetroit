@@ -3,6 +3,7 @@ var app = angular.module('detroitMod');
 app.factory('detroitFactory', function($http, $location, $rootScope){
 
 var postList = [];
+var modPost = {};
 
 	return {
 		getLocation: getLocation,
@@ -107,20 +108,18 @@ var postList = [];
 	      "Accept": "application/json"
 	    }
 	  }).then(function(result){
-	    var data = {};
-	    data.post = result.data.result;
-	    data.zip = $rootScope.zip;
-	    console.log(data);
-	    addPost(data);
+	    modPost.post = result.data.result;
+	    modPost.zip = $rootScope.zip;
+	    // console.log(data);
 	  });
 	  return p;
 	}
 
-	function addPost(newPost) {
+	function addPost() {
 	  return $http({
 	     url: '/post',
 	     method: 'POST',
-	     data: newPost
+	     data: modPost
 	  }).then(function(response){
 	    postList = response.data
 	    console.log(postList)
