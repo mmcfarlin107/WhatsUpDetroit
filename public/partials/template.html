@@ -41,9 +41,9 @@
                   <p>{{post.post}}</p>
                 </div>
                 <div class="scorestuff col-xs-2 col-md-2">
-                  <button type="submit" ng-click="upvotePost(post, post.id, $index); coolDown($index) " class="upvoteBtn" ng-disabled='post.disableUpVote'></button>
+                  <button type="submit" ng-click="upvotePost(post, post.id, $index); coolDown($index) " class="upvoteBtn glyphicon glyphicon-chevron-up" ng-disabled='post.disableUpVote'></button>
                   <p>+{{post.up_votes}}</p>
-                  <button type="button" class="downvoteBtn" ng-click="downvotePost(post, post.id, $index)" ng-disabled='post.disableDownVote'></button>
+                  <button type="button" class="downvoteBtn glyphicon glyphicon-chevron-down" ng-click="downvotePost(post, post.id, $index)" ng-disabled='post.disableDownVote'></button>
                   <p>-{{post.down_votes}}</p>
                   </div>
             </div>
