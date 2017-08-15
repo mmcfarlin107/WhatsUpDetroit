@@ -61,12 +61,13 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 	});
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
-		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
-			$scope.posts = detroitFactory.returnList();
-			console.log($scope.posts);
-
+		console.log(content.zip)
+		detroitFactory.blockProf(content.post).then(function(){
+			detroitFactory.addPost().then(function() {
+				$scope.posts = detroitFactory.returnList();
+				console.log($scope.posts);
+			})
 		})
 	}
 
@@ -196,12 +197,13 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 	});
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
-		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
-			$scope.posts = detroitFactory.returnList();
-
-
+		console.log(content.zip)
+		detroitFactory.blockProf(content.post).then(function(){
+			detroitFactory.addPost().then(function() {
+				$scope.posts = detroitFactory.returnList();
+				console.log($scope.posts);
+			})
 		})
 	}
 
@@ -259,12 +261,13 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 	});
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
-		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
-			$scope.posts = detroitFactory.returnList();
-
-
+		console.log(content.zip)
+		detroitFactory.blockProf(content.post).then(function(){
+			detroitFactory.addPost().then(function() {
+				$scope.posts = detroitFactory.returnList();
+				console.log($scope.posts);
+			})
 		})
 	}
 
@@ -324,12 +327,13 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 	});
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
-		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
-			$scope.posts = detroitFactory.returnList();
-
-
+		console.log(content.zip)
+		detroitFactory.blockProf(content.post).then(function(){
+			detroitFactory.addPost().then(function() {
+				$scope.posts = detroitFactory.returnList();
+				console.log($scope.posts);
+			})
 		})
 	}
 
@@ -388,12 +392,13 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 	});
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
-		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
-			$scope.posts = detroitFactory.returnList();
-
-
+		console.log(content.zip)
+		detroitFactory.blockProf(content.post).then(function(){
+			detroitFactory.addPost().then(function() {
+				$scope.posts = detroitFactory.returnList();
+				console.log($scope.posts);
+			})
 		})
 	}
 
@@ -455,12 +460,13 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 	});
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
-		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
-			$scope.posts = detroitFactory.returnList();
-
-
+		console.log(content.zip)
+		detroitFactory.blockProf(content.post).then(function(){
+			detroitFactory.addPost().then(function() {
+				$scope.posts = detroitFactory.returnList();
+				console.log($scope.posts);
+			})
 		})
 	}
 
