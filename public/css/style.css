@@ -1,73 +1,120 @@
+//stylesheet 3
+@import url('https://fonts.googleapis.com/css?family=Ovo');
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+*{
+  outline-color: #eee;
+}
+
 body {
+  margin-top: 15px;
+  margin-bottom: 15px;
   width: 100%;
-  height: 100%;
-  /*background-image: url("background.jpg");*/
-  background-image: url("../images/background.jpg");
-  /*no-repeat and fixed keep the background image fixed when you scroll, and won't repeat it if you go past where it would display*/
+  background-color: rgba(76,76,76,1);
+}
+
+.loadscreen {
+  background: url('../images/timelapse.gif') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/*.navcontainer{
+  position: relative;
+  margin: 0 auto;
+  background-size: 700px;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  min-height: 360px;
+  width: 100%;
+}*/
+
+.titlecontainer {
+  display: block;
+  min-width: 200px;
 }
-
-
-@font-face {
-  font-family: "Marck Script";
-  src: url("../fonts/MarckScript-Regular.ttf");
-}
-
 
 .title {
-
+  text-align: center;
   /*max width is set to 1k px so it looks a little bit more neat on larger screen resolutions*/
-  width: 100%;
-  max-width: 1000px;
-  height: 20%;
-  max-height: 200px;
+  margin-top: 0px;
+  max-width: 100%;
+  height: 60%;
+  max-height: 500px;
   /*font size scales by the view width*/
-  font-size: 12vw;
+  font-size: 9.1vw;
   /*stroke adds the outline to the title. it helps it stick out from the background image.*/
-  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
-  text-shadow: -4px 4px 2px rgba(150, 150, 150, 1);
-  font-family: 'Marck Script', cursive;
-  color: #FAEBD7;
+  text-shadow: -4px 4px 2px rgba(40, 40, 40, 1);
+  font-family: 'Ovo', cursive;
+  color: white;
   transform: rotate(-5deg);
   /*this animation expands the title from being compressed to being displayed normally over the course of 2 seconds.*/
-	animation: tracking-in-expand 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+  animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
-.title p {
-  max-height: 500px;
-}@keyframes tracking-in-expand {
+
+@keyframes tracking-in-expand {
   /*this is where the calculations for the title expanding animation are done*/
   0% {
     letter-spacing: -0.5em;
     opacity: 0;
   }
   40% {
-    opacity: 0.6;
+    opacity: 0.8;
   }
   100% {
     opacity: 1;
   }
 }
 
-
-.whatsUp{
-  /*this class is for the div that holds the dropdown menu and the submit post button.*/
-  font-family: 'arial';
-  width: 270px;
-  height: 180px;
-  margin: 10px auto;
-  background-color: rgba(250, 235, 215, 0.75);
-  border-radius: 10px;
-  position: relative;
-  z-index: 50;
-  text-align: center;
+.postcontainer {
+  padding-top: 30px;
+  min-width: 400px;
+ /* background-size: 125px;
+  background-image:url("../images/Brick-2372.jpg");
+  background-size: 125px;*/
+  background-color: lightgrey;
+  background-repeat: repeat;
+  min-height: 800px;
+  box-shadow: 5px 5px 5px rgba(170,170,170,0.9);
 }
+
+.outline {
+  position: relative;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+/*.blockout1{
+  position: fixed;
+  left: 300px;
+  display: block;
+  height: 200px;
+  width: 100%;
+  padding-left: 1000px;
+  transform: rotate(35deg);
+  background-color: pink;
+  z-index: -1;
+}
+
+.blockout2{
+  position: fixed;
+  display: block;
+  bottom: 400px;
+  left: 400px;
+  height: 200px;
+  width: 2000px;
+  padding-left: 1000px;
+  padding-right: 100px;
+  transform: rotate(-35deg);
+  background-color: red;
+  z-index: -1;
+}*/
+
 
 /*animation to fade in the whatsup div*/
 .whatsUp {
-	-webkit-animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  -webkit-animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }@-webkit-keyframes fade-in {
   0% {
     opacity: 0;
@@ -85,17 +132,46 @@ body {
 }
 
 
+
+.whatsUp{
+  /*this class is for the div that holds the dropdown menu and the submit post button.*/
+  font-family: 'Muli', sans-serif;
+  width: 270px;
+  height: 180px;
+  margin: 10px auto;
+  background-color: rgba(250, 235, 215, 0.75);
+  border-radius: 10px;
+  position: relative;
+  z-index: 50;
+  text-align: center;
+}
+
+
+.nav {
+  font-family: 'Muli', sans-serif;
+  margin: 10px auto;
+  border-radius: 10px;
+  position: relative;
+  z-index: 50;
+  text-align: center;
+
+}
+
+
 .dropbtn {
   /*this is the actual button that says "what are people thinking in..."*/
-    background-color: cyan;
+    background-color: orange;
+    box-shadow: 2px 2px 2px rgba(120,120,120,0.9);
     color: white;
+    border-color: #400303;
     padding: 16px;
     font-size: 16px;
-    width: 240px;
-    border-radius: 10px;
+    width: 100%;
+    border-radius: 2px;
     display: block;
     margin: auto;
 }
+
 .dropdown {
   /*this is the class meant to contain the dropbtn and the dropdown-content*/
     text-align: center;
@@ -106,6 +182,7 @@ body {
     width: 240px;
     margin:5px auto;
 }
+
 .dropdown-content {
   /*display:none until hovered (hover is down below)*/
     display: none;
@@ -117,6 +194,7 @@ body {
     left: auto;
     right: auto;
 }
+
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
@@ -127,24 +205,90 @@ body {
 .dropdown-content a:hover {
   background-color: #f1f1f1
 }
+
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
 .dropdown:hover .dropbtn {
     background-color: #00bfff;
 }
+
 .submitPost{
-  padding: 16px;
-  font-size: 16px;
-  width: 240px;
-  height: 80px;
-  background-color: cyan;
-  color: white;
-  border-radius: 10px;
+    background-color: orange;
+    box-shadow: 2px 2px 2px rgba(180,180,180,0.9);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 240px;
+    border-radius: 2px;
+    border-color: #400303;
+    display: block;
+    margin: auto;
 }
 
 
+/*this is the div for the input that pops up when you click on submit a post*/
+.inputDiv {
+  width: 90%;
+  max-width: 400px;
+  min-height: 170px;
+  background-color: #400303;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-color: #400303;
+  border-radius: 2px;
+  top: 30%;
+  position: fixed;
+  left: 50%;
+  margin-left: -200px;
+
+  /*high z index just to make sure it appears over anything else*/
+  z-index: 100;
+}
+
+#countdown {
+  color: #f5f5f5;
+}
+
+.hidden {
+  display: none;
+}
+
+.inputTextArea{
+  display: block;
+  position: relative;
+  width: 300px;
+  height: 100px;
+  margin: 10px auto;
+  resize: none;
+  border: none;
+}
+
+.inputBtns{
+  display: inline;
+  width: 70px;
+  height: 30px;
+}
+
+.cancelBtn{
+}
+
+.submitBtn{
+}
+
+.post {
+  border-radius: 15px;
+  font-family: 'Muli', sans-serif;
+  background-color: white;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 5px rgba(100,100,100,0.9);
+  font-size: 18px;
+}
+
 .postArea {
+  font-family: 'Muli', sans-serif;
   position: relative;
   z-index: 0;
   padding-top: 5px;
@@ -153,7 +297,7 @@ body {
   margin: auto;
   border-radius: 10px;
   -webkit-animation: fade-in-bottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-	        animation: fade-in-bottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          animation: fade-in-bottom 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }@-webkit-keyframes fade-in-bottom {
   0% {
     -webkit-transform: translateY(50px);
@@ -173,96 +317,21 @@ body {
 }
 
 
-.post {
-  display: inline-block;
-  min-height: 80px;
-  margin: 5px 0;
-  background-color: cyan;
-  opacity: 1.0;
-  border-radius: 10px;
-  padding-top: 5px;
-  box-shadow: -10px 10px 10px 0px rgba(0,0,0,0.75);
-  border:2px solid #2eb9ce;
-  max-width: 95%;
-}.scoreStuff{
-  /*float: right;*/
-}.upvoteBtn{
-  background-color: cyan;
-  color: white;
-}.downvoteBtn{
-  background-color: cyan;
-  color: white;
-}.post:hover{
-  animation: scale-up-center 0.25s both;
-  z-index: 10;
-}@keyframes scale-up-center {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.10);
-  }
+
+.scorestuff{
+  position: relative;
+  top: 8px;
 }
-
-
-
-.postText{
-  display: inline-block;
-}
-
-
-
-@media (min-width: 1080px) {
-  /*fixes title size on screen widths of higher than 1080p*/
-  .title{
-    font-size: 9vw;
-  }
-}
-
-
-/*this is the div for the input that pops up when you click on submit a post*/
-.inputDiv {
-  width: 90%;
-  max-width: 400px;
-  min-height: 170px;
-  background-color: cyan;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 10px;
-  top: 30%;
-  position: fixed;
-  left: 50%;
-  margin-left: -200px;
-  border:2px solid #2eb9ce;
-
-  /*high z index just to make sure it appears over anything else*/
-  z-index: 100;
-}.inputTextArea{
-  display: block;
-  width: 300px;
-  height: 100px;
-  margin: 10px auto;
-}.inputBtns{
-  display: inline;
-  width: 70px;
-  height: 30px;
-}.cancelBtn{
-}.submitBtn{
-}
-
-
-
-.hidden {
-  display: none;
-}
-
-
 
 .textArea{
+  font-family: 'Muli', sans-serif;
+  font-size: 15px;
+  font-family: helvetica;
+  position: relative;
+  top: 50%;
+  display: inline-block;
   overflow: auto;
 }
-
 
 .spinner {
   margin: 100px auto 0;
@@ -302,11 +371,17 @@ body {
 .loading{
   font-size: 16px;
   text-align: center;
-  background-color: white;
-  width: 400px;
-  height: 150px;
-  margin: 0px auto;
+  background-color: rgba(220,220,220,0.9);
+  vertical-align: center;
+  margin: 25%;
+
 }
  #positiveVibes{
-   font-size: 16px;
+   font-size: 24px;
  }
+
+.404{
+  display: block;
+  position: relative;
+  margin-top: 100px;
+}

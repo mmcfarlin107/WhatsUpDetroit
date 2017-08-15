@@ -63,7 +63,7 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 	$scope.newPost = function(content) {
 		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
+		detroitFactory.blockProf(content.post).then(function(){
 			$scope.posts = detroitFactory.returnList();
 
 
@@ -104,7 +104,7 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 		})
 	};
 
-	$scope.myBackgroundUrl = "../images/corktown.jpg"
+	$scope.myBackgroundUrl = "../images/ghostbeard.jpg"
 });
 //-----END------
 
@@ -113,8 +113,8 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 app.controller('downtown', function($scope, detroitFactory, $rootScope){
 	$scope.posts = [];
 	$scope.areaName = "Downtown"
+	$scope.blockProf = detroitFactory.blockProf;
 	$scope.thisZip = "48226"
-	$scope.blockProf=detroitFactory.blockProf;
 	if($scope.thisZip === $rootScope.zip) {
 		$scope.hide = false
 		$scope.placeholder = "what's on your mind?"
@@ -129,14 +129,13 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 	$scope.formHide = true
 
 	//function below parses input and sends to route and then to database, returns to ng repeat
-	$scope.newPost = function(content) {
+	$scope.newPost = function(content){
 		content.zip = $rootScope.zip
 		console.log(content.zip)
 		detroitFactory.blockProf(content.post).then(function(){
 			$scope.posts = detroitFactory.returnList();
-
-		})
-	}
+	});
+}
 
 
 	$scope.upvotePost = function(post, id, index) {
@@ -172,7 +171,7 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 		})
 	};
 
-	$scope.myBackgroundUrl = "../images/downtown.jpeg"
+	$scope.myBackgroundUrl = "../images/downtown.jpg"
 
 });
 //-----END------
@@ -197,7 +196,7 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 	$scope.newPost = function(content) {
 		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
+		detroitFactory.blockProf(content.post).then(function(){
 			$scope.posts = detroitFactory.returnList();
 
 
@@ -237,7 +236,7 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 		})
 	};
 
-	$scope.myBackgroundUrl = "../images/midtown.jpg"
+	$scope.myBackgroundUrl = "../images/Grand-River-Creative-Corridor_0706.jpg"
 });
 //-----END------
 
@@ -260,7 +259,7 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 	$scope.newPost = function(content) {
 		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
+		detroitFactory.blockProf(content.post).then(function(){
 			$scope.posts = detroitFactory.returnList();
 
 
@@ -301,7 +300,7 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 		})
 	};
 
-	$scope.myBackgroundUrl = "../images/woodbridge.jpg"
+	$scope.myBackgroundUrl = "../images/woodbrigee.png"
 });
 //-----END------
 
@@ -325,7 +324,7 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 	$scope.newPost = function(content) {
 		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
+		detroitFactory.blockProf(content.post).then(function(){
 			$scope.posts = detroitFactory.returnList();
 
 
@@ -365,7 +364,7 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 
 		})
 	};
-	$scope.myBackgroundUrl = "../images/newcenter.jpg"
+	$scope.myBackgroundUrl = "../images/illuminatedmural.jpg"
 });
 //-----END------
 
@@ -389,7 +388,7 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 	$scope.newPost = function(content) {
 		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
+		detroitFactory.blockProf(content.post).then(function(){
 			$scope.posts = detroitFactory.returnList();
 
 
@@ -431,7 +430,7 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 		})
 	};
 
-	$scope.myBackgroundUrl = "../images/eastcentral.jpg"
+	$scope.myBackgroundUrl = "../images/easternmarket.jpg"
 
 });
 //-----END------
@@ -456,7 +455,7 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 	$scope.newPost = function(content) {
 		console.log('working from click')
 		content.zip = $rootScope.zip
-		detroitFactory.addPost(content).then(function(){
+		detroitFactory.blockProf(content.post).then(function(){
 			$scope.posts = detroitFactory.returnList();
 
 
@@ -498,7 +497,7 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 		})
 	};
 
-	$scope.myBackgroundUrl = "../images/southwest.jpg"
+	$scope.myBackgroundUrl = "../images/southwestern.jpg"
 });
 //-----END------
 
