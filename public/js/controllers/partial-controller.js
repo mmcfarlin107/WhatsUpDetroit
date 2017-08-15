@@ -302,11 +302,9 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 		})
 	};
 
-<<<<<<< HEAD
-	$scope.myBackgroundUrl = "../images/woodbriege.jpg"
-=======
+
 	$scope.myBackgroundUrl = "../images/woodbridge.jpg"
->>>>>>> 585c95449f47d17c0f424037efeda09efbf591c9
+
 });
 //-----END------
 
@@ -370,11 +368,9 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 
 		})
 	};
-<<<<<<< HEAD
+
 	$scope.myBackgroundUrl = "../images/illuminatedmural.JPG"
-=======
-	$scope.myBackgroundUrl = "../images/newcenter.jpg"
->>>>>>> 585c95449f47d17c0f424037efeda09efbf591c9
+
 });
 //-----END------
 
