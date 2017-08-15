@@ -25,8 +25,11 @@ route.get('/getposts/:zip', function(req, res, next) {
 
 route.post('/post', function(req, res, next){
   var data = req.body;
-  pool.query('insert into post_content (post, zip, up_votes, down_votes, score, upvoted, downvoted) values ($1::text, $2::text, $3::int, $4::int, $5::int, $6::boolean, $7::boolean)', [data.post, data.zip, 0, 0, 0, null, null]).then(function(){
+  var d = Date.now()
+
+  pool.query('insert into post_content (post, zip, up_votes, down_votes, score, upvoted, downvoted, date) values ($1::text, $2::text, $3::int, $4::int, $5::int, $6::boolean, $7::boolean, $8::text)', [data.post, data.zip, 0, 0, 0, null, null, d]).then(function(){
     pool.query('SELECT * FROM post_content WHERE zip=$1::text and score>$2::int order by id', [data.zip, -10]).then(function(result){
+      console.log(result.rows)
       res.json(result.rows);
       });
   });

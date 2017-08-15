@@ -71,7 +71,7 @@ var postList = [];
 			method: 'GET',
 			url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + crd.latitude + ',' + crd.longitude + '&key=AIzaSyDPVrV4R_jLLWAIQe4zPaIJaNSEJGiRwYM'
 		}).then(function successfulCallback(response){
-			console.log(response.data.results)
+			//console.log(response.data.results)
 			zip = response.data.results[0].address_components[7].long_name
 		});
 	}
