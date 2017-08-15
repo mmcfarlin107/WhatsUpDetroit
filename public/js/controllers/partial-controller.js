@@ -114,7 +114,6 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 	$scope.posts = [];
 	$scope.areaName = "Downtown"
 	$scope.thisZip = "48226"
-	$scope.blockProf=detroitFactory.blockProf;
 	if($scope.thisZip === $rootScope.zip) {
 		$scope.hide = false
 		$scope.placeholder = "what's on your mind?"
@@ -122,19 +121,20 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 		$scope.hide = true
 		$scope.placeholder = "be sure to let us know what's happening once you get here!"
 	};
-	detroitFactory.getPosts("48226").then(function(){
+detroitFactory.getPosts("48226").then(function(){
 		$scope.posts = detroitFactory.returnList();
 	});
 
 	$scope.formHide = true
 
 	//function below parses input and sends to route and then to database, returns to ng repeat
-	$scope.newPost = function(content) {
+	$scope.newPost = function(content, id) {
 		content.zip = $rootScope.zip
 		console.log(content.zip)
 		detroitFactory.blockProf(content.post).then(function(){
-			$scope.posts = detroitFactory.returnList();
-
+			$scope.$apply(function() {
+				$scope.posts = detroitFactory.returnList();
+			})
 		})
 	}
 
