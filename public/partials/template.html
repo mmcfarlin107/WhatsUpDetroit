@@ -41,18 +41,18 @@
                   <p>{{post.post}}</p>
                 </div>
                 <div class="scorestuff col-xs-2 col-md-2">
-                  <button type="submit" ng-click="upvotePost(post, post.id, $index); coolDown($index) " class="upvoteBtn" ng-disabled='post.disableUpVote'>▲</button>
+                  <button type="submit" ng-click="upvotePost(post, post.id, $index); coolDown($index) " class="upvoteBtn" ng-disabled='post.disableUpVote'></button>
                   <p>+{{post.up_votes}}</p>
-                  <button type="button" class="downvoteBtn" ng-click="downvotePost(post, post.id, $index)" ng-disabled='post.disableDownVote'>▼</button>
+                  <button type="button" class="downvoteBtn" ng-click="downvotePost(post, post.id, $index)" ng-disabled='post.disableDownVote'></button>
                   <p>-{{post.down_votes}}</p>
                   </div>
             </div>
-            <div class="row">  
-              <div class="timeposted pull-left"> 
+            <div class="row">
+              <div class="timeposted pull-left">
                   <span class="glyphicon glyphicon-time" ng-mouseover="showtime=true" ng-mouseleave="showtime=false"></span>
-                  <span ng-show="showtime" id="date">{{post.date | date:  "'posted' MM/dd/yy 'at' h:mma"}}</span> 
+                  <span ng-show="showtime" id="date">{{post.date | date:  "'posted' MM/dd/yy 'at' h:mma"}}</span>
               </div>
-        
+
               </div>
           </div>
         </div>
