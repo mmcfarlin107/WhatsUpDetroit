@@ -122,21 +122,22 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 		$scope.hide = true
 		$scope.placeholder = "be sure to let us know what's happening once you get here!"
 	};
-	detroitFactory.getPosts("48226").then(function(){
+detroitFactory.getPosts("48226").then(function(){
 		$scope.posts = detroitFactory.returnList();
 	});
 
 	$scope.formHide = true
 
 	//function below parses input and sends to route and then to database, returns to ng repeat
-	$scope.newPost = function(content){
+	$scope.newPost = function(content, id) {
 		content.zip = $rootScope.zip
 		console.log(content.zip)
 		detroitFactory.blockProf(content.post).then(function(){
-			$scope.posts = detroitFactory.returnList();
-	});
-}
-
+			$scope.$apply(function() {
+				$scope.posts = detroitFactory.returnList();
+			})
+		})
+	}
 
 	$scope.upvotePost = function(post, id, index) {
     	console.log(post, id, index);
@@ -385,7 +386,7 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 		$scope.posts = detroitFactory.returnList();
 	});
 	//function below parses input and sends to route and then to database, returns to ng repeat
-	$scope.newPost = function(content) {
+	$scope.newPost = function(content, id) {
 		console.log('working from click')
 		content.zip = $rootScope.zip
 		detroitFactory.blockProf(content.post).then(function(){
@@ -457,8 +458,6 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 		content.zip = $rootScope.zip
 		detroitFactory.blockProf(content.post).then(function(){
 			$scope.posts = detroitFactory.returnList();
-
-
 		})
 	}
 
