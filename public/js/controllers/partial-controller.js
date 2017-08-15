@@ -457,8 +457,6 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 		content.zip = $rootScope.zip
 		detroitFactory.blockProf(content.post).then(function(){
 			$scope.posts = detroitFactory.returnList();
-
-
 		})
 	}
 
