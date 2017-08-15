@@ -129,7 +129,6 @@ detroitFactory.getPosts("48226").then(function(){
 	$scope.formHide = true
 
 	//function below parses input and sends to route and then to database, returns to ng repeat
-<<<<<<< HEAD
 	$scope.newPost = function(content, id) {
 		content.zip = $rootScope.zip
 		console.log(content.zip)
@@ -139,16 +138,6 @@ detroitFactory.getPosts("48226").then(function(){
 			})
 		})
 	}
-=======
-	$scope.newPost = function(content){
-		content.zip = $rootScope.zip
-		console.log(content.zip)
-		detroitFactory.blockProf(content.post).then(function(){
-			$scope.posts = detroitFactory.returnList();
-	});
-}
->>>>>>> a6b74b291c11fbf91b003b66e1832d0412b4bbfe
-
 
 	$scope.upvotePost = function(post, id, index) {
     	console.log(post, id, index);
@@ -397,7 +386,7 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 		$scope.posts = detroitFactory.returnList();
 	});
 	//function below parses input and sends to route and then to database, returns to ng repeat
-	$scope.newPost = function(content) {
+	$scope.newPost = function(content, id) {
 		console.log('working from click')
 		content.zip = $rootScope.zip
 		detroitFactory.blockProf(content.post).then(function(){
