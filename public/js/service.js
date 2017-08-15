@@ -96,11 +96,12 @@ var postList = [];
 	  console.log('works');
 	  var words= ['puppies', 'rainbow', 'unicorn', 'tigers', 'kittens', 'beautiful', 'leprechaun', 'cookies',
 	  'sunshine', 'brownie', 'spirit', 'heart', 'love', 'taco', 'jazz', 'awesome', 'sparkle'];
+		var badWords = 'dick,cock,suck,slut,whore,hoe,titty,fag';
 	  var wordReplace = words[Math.floor(Math.random() * words.length)];
 	  // var inputArea = document.getElementbyId('inputArea').value;
 	  var p= $http({
 	    method: 'GET',
-	    url: 'https://community-purgomalum.p.mashape.com/json?fill_text=' + wordReplace + '&text=' + content,
+	    url: 'https://community-purgomalum.p.mashape.com/json?fill_text=' + wordReplace + '&text=' + content + '&add=' + badWords,
 	    headers:{
 	      "X-Mashape-Key": "98M34VsMZrmshKpU82TTSAgyvWv6p1b9BZsjsnxdtc5Jidg4TW",
 	      "Accept": "application/json"
