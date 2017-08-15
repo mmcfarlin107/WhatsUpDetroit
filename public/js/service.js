@@ -71,7 +71,7 @@ var postList = [];
 			method: 'GET',
 			url: 'https://maps.googleapis.com/maps/api/geocode/json?latlng=' + crd.latitude + ',' + crd.longitude + '&key=AIzaSyDPVrV4R_jLLWAIQe4zPaIJaNSEJGiRwYM'
 		}).then(function successfulCallback(response){
-			console.log(response.data.results)
+			//console.log(response.data.results)
 			zip = response.data.results[0].address_components[7].long_name
 		});
 	}
@@ -96,12 +96,12 @@ var postList = [];
 	  console.log('works');
 	  var words= ['puppies', 'rainbow', 'unicorn', 'tigers', 'kittens', 'beautiful', 'leprechaun', 'cookies',
 	  'sunshine', 'brownie', 'spirit', 'heart', 'love', 'taco', 'jazz', 'awesome', 'sparkle'];
-		var badWords = 'dick, cock, suck, slut, whore, hoe, titty, fag';
+		var badWords = 'dick,cock,suck,slut,whore,hoe,titty,fag';
 	  var wordReplace = words[Math.floor(Math.random() * words.length)];
 	  // var inputArea = document.getElementbyId('inputArea').value;
 	  var p= $http({
 	    method: 'GET',
-	    url:'https://community-purgomalum.p.mashape.com/json?fill_text=' + wordReplace + '&text=' + content + '&add=' + badWords,
+	    url: 'https://community-purgomalum.p.mashape.com/json?fill_text=' + wordReplace + '&text=' + content + '&add=' + badWords,
 	    headers:{
 	      "X-Mashape-Key": "98M34VsMZrmshKpU82TTSAgyvWv6p1b9BZsjsnxdtc5Jidg4TW",
 	      "Accept": "application/json"

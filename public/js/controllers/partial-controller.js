@@ -137,6 +137,7 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 	});
 }
 
+
 	$scope.upvotePost = function(post, id, index) {
     	console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
