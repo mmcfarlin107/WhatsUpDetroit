@@ -17,15 +17,6 @@ body {
   background-size: cover;
 }
 
-/*.navcontainer{
-  position: relative;
-  margin: 0 auto;
-  background-size: 700px;
-  background-repeat: no-repeat;
-  min-height: 360px;
-  width: 100%;
-}*/
-
 .titlecontainer {
   display: block;
   min-width: 200px;

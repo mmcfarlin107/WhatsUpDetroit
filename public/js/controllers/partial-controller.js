@@ -48,7 +48,6 @@ $scope.myBackgroundUrl = "../images/Grand-River-Creative-Corridor_0706.jpg"
 app.controller('corktown', function($scope, detroitFactory, $rootScope){
 	$scope.areaName = "Corktown"
 	$scope.thisZip = "48216"
-	$scope.blockProf=detroitFactory.blockProf;
 	if($scope.thisZip === $rootScope.zip) {
 		$scope.hide = false
 		$scope.placeholder = "what's on your mind?"
