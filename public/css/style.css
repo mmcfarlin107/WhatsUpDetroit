@@ -100,7 +100,7 @@ body {
  /* background-size: 125px;
   background-image:url("../images/Brick-2372.jpg");
   background-size: 125px;*/
-  background-color: rgba(168, 168, 168, 0.17);
+  background-color: lightgrey;
   background-repeat: repeat;
   min-height: 800px;
   box-shadow: 5px 5px 5px rgba(170,170,170,0.9);
@@ -200,7 +200,7 @@ body {
     padding: 16px;
     font-size: 16px;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 2px;
     display: block;
     margin: auto;
     transition: 0.25s all;
@@ -258,7 +258,7 @@ body {
   font-size: 16px;
   width: 260px;
   border: 1px solid #000;
-  border-radius: 10px;
+  border-radius: 2px;
   display: block;
   margin: auto;
 }
@@ -323,7 +323,6 @@ body {
   margin: 10px auto;
   resize: none;
   border: none;
-  border-radius: 10px;
 }
 
 .inputBtns{
@@ -375,10 +374,11 @@ body {
   }
 }
 
+
+
 .scorestuff{
   position: relative;
   top: 8px;
-  margin-top: 25px;
 }
 
 .textArea{
@@ -390,7 +390,6 @@ body {
   display: inline-block;
   overflow: auto;
   min-height: 112px;
-  padding:30px;
 }
 
 .textArea p{
@@ -401,16 +400,14 @@ body {
 
 .spinner {
   margin: 100px auto 0;
-  width: 50%;
+  width: 70px;
   text-align: center;
-  width: 500px;
 }
 .spinner > div {
   width: 18px;
   height: 18px;
-  /*background-color: rgba(32,124,154,1);*/
-  background-color: white;
-  border-radius: 100%;
+  background-color: #333;
+ border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
   animation: sk-bouncedelay 1.4s infinite ease-in-out both;
@@ -439,17 +436,13 @@ body {
 .loading{
   font-size: 16px;
   text-align: center;
-  background-color: rgba(220,220,220,0.1);
-  /*vertical-align: center;*/
+  background-color: rgba(220,220,220,0.9);
+  vertical-align: center;
   margin: 25%;
-  /*color: rgba(32,124,154,1);*/
-  color: white;
+
 }
-
- .positiveVibes{
-   margin-top: 10%;
+ #positiveVibes{
    font-size: 24px;
-
  }
 
 .404{
@@ -468,12 +461,29 @@ body {
   text-indent: 2px;
 }
 
- .timeposted {
- text-align: center;
- position: relative;
- bottom: 10px;
+.timeposted {
+  text-align: center;
+  position: relative;
+  bottom: 10px;
+
+}
+
+.populartimeposted {
+  text-align: center;
+  position: relative;
+  bottom: 4px;
+}
+
+.originallyposted {
+  text-align: center;
+  font-size: 10px;
+  position: relative;
+  bottom: 8px;
+}
 
 .loading {
     background': url('../images/timelapse.gif') no-repeat center center fixed;
     background-size: cover
 }
+
+

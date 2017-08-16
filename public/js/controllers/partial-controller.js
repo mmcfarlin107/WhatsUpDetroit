@@ -6,7 +6,7 @@ var app = angular.module('detroitMod');
 app.controller('popularCtrl', function($scope,detroitFactory,$rootScope){
 $scope.areaName = "Most Popular";
 detroitFactory.getPopular().then(function(){
-	$scope.posts = detroitFactory.returnList();
+	$scope.posts = detroitFactory.returnList()
 });
 
 $scope.upvotePost = function(post, id, index) {
@@ -39,6 +39,9 @@ $scope.upvotePost = function(post, id, index) {
 		 }, 12000)
 
 	})
+
+
+
 };
 
 $scope.myBackgroundUrl = "../images/Grand-River-Creative-Corridor_0706.jpg"
