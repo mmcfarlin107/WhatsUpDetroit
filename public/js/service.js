@@ -40,10 +40,6 @@ var modPost = {};
 
 
 	function returnList(){
-		postList.forEach(function(x){
-			x.upClicked = false
-			x.downClicked = false
-		})
 		return postList;
 	}
 
