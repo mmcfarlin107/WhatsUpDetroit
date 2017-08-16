@@ -459,12 +459,19 @@ body {
 }
 
 #date {
-    display: block;
-    /*margin-bottom: 15px;*/
-    padding-bottom: 10px;
-    font-size: 10px;
-    margin-left: 100px;
+  position: relative;
+  bottom: 3px;
+  font-size: 10px;
+  margin: 10 0 0 0 ;
+  padding: 0 0 0 0 ;
+  font-color: rgba(10,10,10,0.4);
+  text-indent: 2px;
 }
+
+ .timeposted {
+ text-align: center;
+ position: relative;
+ bottom: 10px;
 
 .loading {
     background': url('../images/timelapse.gif') no-repeat center center fixed;

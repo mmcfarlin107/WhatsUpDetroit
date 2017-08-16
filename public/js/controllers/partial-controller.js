@@ -240,7 +240,7 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 		})
 	};
 
-	$scope.myBackgroundUrl = "../images/hopcat.jpg"
+	$scope.myBackgroundUrl = "../images/Grand-River-Creative-Corridor_0706.jpg"
 });
 //-----END------
 
