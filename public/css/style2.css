@@ -1,3 +1,5 @@
+/* This was for restyling only */
+
 @import url('https://fonts.googleapis.com/css?family=Ovo');
 @import url('https://fonts.googleapis.com/css?family=Muli');
 
@@ -24,8 +26,6 @@ body {
   width: 100%;
 }*/
 
-/* Title Styles */
-
 .titlecontainer {
   display: block;
   min-width: 200px;
@@ -34,21 +34,19 @@ body {
 .title {
   text-align: center;
   /*max width is set to 1k px so it looks a little bit more neat on larger screen resolutions*/
-  margin-right: 18px;
-  margin-top: 40px;
-  /* makes less space between words when they go on another line*/
-  line-height: 1;
-  height: 60%;
-  max-height: 500px;
+  margin-top: 0px;
+  max-width: 1000px;
+  height: 20%;
+  max-height: 200px;
   /*font size scales by the view width*/
-  font-size: 11.1vw;
+  font-size: 9.1vw;
   /*stroke adds the outline to the title. it helps it stick out from the background image.*/
-  /*-webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;*/
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
   text-shadow: -4px 4px 2px rgba(40, 40, 40, 1);
   font-family: 'Ovo', cursive;
-  color: white;
-
+  color: #FAEBD7;
+  transform: rotate(-5deg);
   /*this animation expands the title from being compressed to being displayed normally over the course of 2 seconds.*/
   animation: tracking-in-expand 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
@@ -67,50 +65,23 @@ body {
   }
 }
 
-@media only screen and (min-width : 615px) {
-  .title{
-      margin-right: 50px;
-      margin-bottom: 40px;
-      font-size: 9.1vw;
-    }
-    .nav{
-    font-family: 'Muli', sans-serif;
-    margin: 10px auto;
-    border-radius: 10px;
-    position: relative;
-    z-index: 50;
-    text-align: center;
-    }
-  }
-
-@media only screen and (min-width : 768px) {
-  .title{
-      transform: rotate(-5deg);
-      margin-right: 0;
-      margin-bottom: 40px;
-      font-size: 7.1vw;
-  }
-}
-@media only screen and (min-width : 992px) {}
-@media only screen and (min-width : 1200px) {}
-
 .postcontainer {
   padding-top: 30px;
   min-width: 400px;
  /* background-size: 125px;
   background-image:url("../images/Brick-2372.jpg");
   background-size: 125px;*/
-  background-color: rgba(168, 168, 168, 0.17);
+  background-color: rgba(80,100,100,0.9);
   background-repeat: repeat;
   min-height: 800px;
   box-shadow: 5px 5px 5px rgba(170,170,170,0.9);
 }
 
-/*.imgcontainer {
+.imgcontainer {
   background-image:url("../images/Brick-2.jpg");
   background-size: 125px;
   background-repeat: repeat;
-}*/
+}
 
 .outline {
   position: relative;
@@ -129,6 +100,7 @@ body {
   background-color: pink;
   z-index: -1;
 }
+
 .blockout2{
   position: fixed;
   display: block;
@@ -179,7 +151,6 @@ body {
   text-align: center;
 }
 
-/*Nav and Dropdown Content */
 
 .nav {
   font-family: 'Muli', sans-serif;
@@ -194,16 +165,16 @@ body {
 
 .dropbtn {
   /*this is the actual button that says "what are people thinking in..."*/
-    background-color: rgba(64, 3, 3, 0.7);
+    background-color: #400303;
+    box-shadow: 2px 2px 2px rgba(120,120,120,0.9);
     color: white;
-    border: 1px solid #000;
+    border-color: #400303;
     padding: 16px;
     font-size: 16px;
     width: 100%;
     border-radius: 2px;
     display: block;
     margin: auto;
-    transition: 0.25s all;
 }
 
 .dropdown {
@@ -213,9 +184,8 @@ body {
     display: inline-block;
     /*this z-index is igher than the post area's z index so that it will display over it when hovered.*/
     z-index: 5;
-    width: 260px;
+    width: 240px;
     margin:5px auto;
-    transition: 0.5s all;
 }
 
 .dropdown-content {
@@ -224,11 +194,10 @@ body {
     position: absolute;
     background-color: #f9f9f9;
     /*min-width: 160px;*/
-    width: 260px;
+    width: 240px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     left: auto;
     right: auto;
-
 }
 
 .dropdown-content a {
@@ -237,7 +206,6 @@ body {
     text-decoration: none;
     display: block;
     text-align: center;
-    transition: 0.5s all;
 }
 .dropdown-content a:hover {
   background-color: #f1f1f1
@@ -248,33 +216,21 @@ body {
 }
 
 .dropdown:hover .dropbtn {
-    background-color: rgba(0,191,255, 0.8);
+    background-color: #00bfff;
 }
 
 .submitPost{
-  background-color: rgba(64,3,3,0.7);
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  width: 260px;
-  border: 1px solid #000;
-  border-radius: 2px;
-  display: block;
-  margin: auto;
+    background-color: #400303;
+    box-shadow: 2px 2px 2px rgba(180,180,180,0.9);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    width: 240px;
+    border-radius: 2px;
+    border-color: #400303;
+    display: block;
+    margin: auto;
 }
-
-@media only screen and (min-width : 615px) {
-  .nav{
-      margin: 20px auto;
-  }
-
-  .titlecontainer{
-    width: 60%;
-  }
-}
-@media only screen and (min-width : 768px) {}
-@media only screen and (min-width : 992px) {}
-@media only screen and (min-width : 1200px) {}
 
 
 /*this is the div for the input that pops up when you click on submit a post*/
@@ -295,16 +251,6 @@ body {
 
   /*high z index just to make sure it appears over anything else*/
   z-index: 100;
-}
-
-.downvoteBtn, .upvoteBtn{
-  background-color: transparent;
-  border: none;
-  transition: 0.5s all;
-}
-
-.downvoteBtn:hover, .upvoteBtn:hover{
-  color: rgba(0,191,255, 0.8);
 }
 
 #countdown {
@@ -338,9 +284,9 @@ body {
 }
 
 .post {
-  border-radius: 15px;
+  border-radius: 2px;
   font-family: 'Muli', sans-serif;
-  background-color: white;
+  background-color: rgba(220,220,220,0.9);
   margin-bottom: 20px;
   box-shadow: 5px 5px 5px rgba(100,100,100,0.9);
 }
@@ -389,13 +335,6 @@ body {
   top: 50%;
   display: inline-block;
   overflow: auto;
-  min-height: 112px;
-}
-
-.textArea p{
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .spinner {
@@ -406,7 +345,7 @@ body {
 .spinner > div {
   width: 18px;
   height: 18px;
-  background-color: orange;
+  background-color: #333;
  border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
@@ -441,11 +380,8 @@ body {
   margin: 25%;
 
 }
-
- .positiveVibes{
-   margin-top: 10%;
+ #positiveVibes{
    font-size: 24px;
-
  }
 
 .404{
@@ -455,8 +391,6 @@ body {
 }
 
 #date {
-  position: relative;
-  bottom: 3px;
   font-size: 10px;
   margin: 10 0 0 0 ;
   padding: 0 0 0 0 ;
@@ -464,16 +398,7 @@ body {
   text-indent: 2px;
 }
 
-.timeposted {
-  text-align: center;
-  position: relative;
-  bottom: 10px;
-
-}
-
 .loading {
     background': url('../images/timelapse.gif') no-repeat center center fixed;
     background-size: cover
 }
-
-
