@@ -19,6 +19,15 @@ app.directive('inputField', function(){
   }
 });
 
+// app.directive('mostPopular', function(){
+
+//   return {
+//     replace: false,
+//     restrict: 'E',
+//     templateUrl: 'partials/mostpopular.html'
+//   }
+// })
+
 
 app.config(function($routeProvider){
 $routeProvider
