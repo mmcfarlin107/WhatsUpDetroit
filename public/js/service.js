@@ -37,8 +37,6 @@ var modPost = {};
 		return p;
 	}
 
-
-
 	function returnList(){
 		return postList;
 	}
