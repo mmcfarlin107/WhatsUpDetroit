@@ -51,7 +51,7 @@ var modPost = {};
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition(success, error, options)
 		} else {
-			console.log('your shit dont work');
+			console.log('not working');
 		}
 	}
 
@@ -83,7 +83,7 @@ var modPost = {};
 
 	var options = {
 		enableHighAccuracy: true,
-		timeout: 20000,
+		timeout: 1000000,
 		maximumAge: 0
 	}
 

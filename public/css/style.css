@@ -100,7 +100,7 @@ body {
  /* background-size: 125px;
   background-image:url("../images/Brick-2372.jpg");
   background-size: 125px;*/
-  background-color: lightgrey;
+  background-color: rgba(168, 168, 168, 0.17);
   background-repeat: repeat;
   min-height: 800px;
   box-shadow: 5px 5px 5px rgba(170,170,170,0.9);
@@ -406,7 +406,7 @@ body {
 .spinner > div {
   width: 18px;
   height: 18px;
-  background-color: #333;
+  background-color: orange;
  border-radius: 100%;
   display: inline-block;
   -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
@@ -441,8 +441,11 @@ body {
   margin: 25%;
 
 }
- #positiveVibes{
+
+ .positiveVibes{
+   margin-top: 10%;
    font-size: 24px;
+
  }
 
 .404{
