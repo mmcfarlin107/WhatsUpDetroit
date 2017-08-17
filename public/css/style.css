@@ -70,7 +70,6 @@ body {
 @media only screen and (min-width : 615px) {
   .title{
       margin-right: 50px;
-      margin-bottom: 40px;
       font-size: 9.1vw;
     }
     .nav{
@@ -268,13 +267,17 @@ body {
   .nav{
       margin: 20px auto;
   }
-
-  .titlecontainer{
-    width: 60%;
+  .title{
+    margin-right: 0;
   }
 }
 @media only screen and (min-width : 768px) {}
-@media only screen and (min-width : 992px) {}
+@media only screen and (min-width : 992px) {
+  .titlecontainer{
+    width: 60%;
+    margin-right: 50px;
+  }
+}
 @media only screen and (min-width : 1200px) {}
 
 
