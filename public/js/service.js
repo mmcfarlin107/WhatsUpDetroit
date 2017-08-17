@@ -7,7 +7,6 @@ var modPost = {};
 
 	return {
 		getLocation: getLocation,
-		getZip: getZip,
 		getPosts: getPosts,
 		getPopular: getPopular,
 		addPost: addPost,
@@ -47,6 +46,7 @@ var modPost = {};
 		} else {
 			console.log('not working');
 		}
+
 	}
 
 	var zip;
@@ -68,6 +68,26 @@ var modPost = {};
 		}).then(function successfulCallback(response){
 			//console.log(response.data.results)
 			zip = response.data.results[0].address_components[7].long_name
+		}).then(function(){
+			$rootScope.zip = zip
+			 if($rootScope.zip === "48226"){
+				$location.path('/downtown')
+			} else if($rootScope.zip === "48216") {
+				$location.path('/corktown')
+			} else if ($rootScope.zip === "48208") {
+				$location.path('/woodbridge')
+			} else if ($rootScope.zip === "48202") {
+				$location.path('/new-center')
+			} else if ($rootScope.zip === "48201") {
+				$location.path('/midtown')
+			} else if ($rootScope.zip === '48207') {
+				$location.path('/east-central')
+			} else if ($rootScope.zip === '48209') {
+				$location.path('/southwest')
+			} else {
+				console.log('error or invalid zip code')
+				$location.path('/sorry')
+			}
 		});
 	}
 
@@ -81,10 +101,6 @@ var modPost = {};
 		maximumAge: 0
 	}
 
-	function getZip() {
-		//console.log(zip)
-		return zip
-	}
 
 	//trying to get the profanity API to work
 	function blockProf(content){
