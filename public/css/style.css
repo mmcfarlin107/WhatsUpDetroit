@@ -86,7 +86,7 @@ body {
 @media only screen and (min-width : 768px) {
   .title{
       transform: rotate(-5deg);
-      margin-right: 0;
+      margin-left: 9%;
       margin-bottom: 40px;
       font-size: 7.1vw;
   }
@@ -486,5 +486,3 @@ body {
     background': url('../images/timelapse.gif') no-repeat center center fixed;
     background-size: cover
 }
-
-
