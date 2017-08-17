@@ -6,5 +6,3 @@ app.controller('homeCtrl', function($scope, $rootScope, $location, detroitFactor
 	$scope.bodyClass = 'loading';
 
 });
-
-
