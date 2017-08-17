@@ -1,2 +1,2 @@
-var app = angular.module('detroitMod', ['ngRoute']);
+var app = angular.module('detroitMod', ['ngRoute', 'ngAnimate']);
 

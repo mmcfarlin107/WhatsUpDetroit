@@ -88,13 +88,13 @@ var modPost = {};
 	}
 
 	function getZip() {
-		console.log(zip)
+		//console.log(zip)
 		return zip
 	}
 
 	//trying to get the profanity API to work
 	function blockProf(content){
-	  console.log('works');
+	  //console.log('works');
 	  var words= ['puppies', 'rainbow', 'unicorn', 'tigers', 'kittens', 'beautiful', 'leprechaun', 'cookies',
 	  'sunshine', 'brownie', 'spirit', 'heart', 'love', 'taco', 'jazz', 'awesome', 'sparkle'];
 		var badWords = 'dick,cock,suck,slut,whore,hoe,titty,fag';
@@ -122,12 +122,12 @@ var modPost = {};
 	     data: modPost
 	  }).then(function(response){
 	    postList = response.data
-	    console.log(postList)
+	    //console.log(postList)
 	  })
 	}
 
   function voteUp(post, id) {
-  	console.log('talking to service')
+  	//console.log('talking to service')
   	var prom = $http({
   		url: '/upvote/' + id,
   		method: 'PUT',
@@ -139,7 +139,7 @@ var modPost = {};
   }
 
   function voteDown(post, id) {
-  	console.log('votedown talking to service')
+  	//console.log('votedown talking to service')
   	var prom = $http({
   		url: '/downvote/' + id,
   		method: 'PUT',

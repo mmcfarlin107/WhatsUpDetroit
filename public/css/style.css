@@ -287,7 +287,8 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
   border-color: #400303;
-  border-radius: 2px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(170,170,170,0.9);
   top: 30%;
   position: fixed;
   left: 50%;
@@ -296,6 +297,43 @@ body {
   /*high z index just to make sure it appears over anything else*/
   z-index: 100;
 }
+
+.inputDiv button {
+  border-radius: 3px;
+  background-color: white;
+  border: none;
+  transition: 0.3s all;
+}
+
+.inputDiv button:hover {
+  background-color: rgba(0,191,255, 0.8);
+  color: white;
+}
+
+.ng-hide-remove {
+   animation: 0.1s fadein;
+}
+
+@keyframes fadein{
+  0% {
+    opacity: 0;
+  }
+
+  33% {
+    opacity: 0.33;
+  }
+
+  66% {
+    opacity: 0.66;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}
+
+
 
 .downvoteBtn, .upvoteBtn{
   background-color: transparent;
