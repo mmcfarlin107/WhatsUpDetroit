@@ -10,7 +10,7 @@ detroitFactory.getPopular().then(function(){
 });
 
 $scope.upvotePost = function(post, id, index) {
-		console.log(post, id, index);
+		// console.log(post, id, index);
 	detroitFactory.voteUp(post, id).then(function(){
 		$scope.posts = detroitFactory.returnList();
 		//disables the upvote button for 12 seconds
@@ -26,7 +26,7 @@ $scope.upvotePost = function(post, id, index) {
 }
 
 	$scope.downvotePost = function(post, id, index){
-	console.log(post, id)
+	// console.log(post, id)
 	detroitFactory.voteDown(post, id).then(function(){
 		$scope.posts = detroitFactory.returnList();
 		//disables the downvote button for 12 seconds
@@ -65,11 +65,11 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
 		content.zip = $rootScope.zip
-		console.log(content.zip)
+
 		detroitFactory.blockProf(content.post).then(function(){
 			detroitFactory.addPost().then(function() {
 				$scope.posts = detroitFactory.returnList();
-				console.log($scope.posts);
+				// console.log($scope.posts);
 			})
 		})
 	}
@@ -77,7 +77,7 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 	$scope.formHide = true
 
 	$scope.upvotePost = function(post, id, index) {
-    	console.log(post, id, index);
+    	// console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 			//disables the upvote button for 12 seconds
@@ -93,7 +93,7 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 	}
 
 		$scope.downvotePost = function(post, id, index){
-		console.log(post, id)
+		// console.log(post, id)
 		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 			//disables the downvote button for 12 seconds
@@ -134,18 +134,18 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
 		content.zip = $rootScope.zip
-		console.log(content.zip)
+		// console.log(content.zip)
 		detroitFactory.blockProf(content.post).then(function(){
 			detroitFactory.addPost().then(function() {
 				$scope.posts = detroitFactory.returnList();
-				console.log($scope.posts);
+				// console.log($scope.posts);
 			})
 		})
 	}
 
 
 	$scope.upvotePost = function(post, id, index) {
-    	console.log(post, id, index);
+    	// console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 			//disables the upvote button for 12 seconds
@@ -162,7 +162,7 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 
 
 	$scope.downvotePost = function(post, id, index){
-		console.log(post, id)
+		// console.log(post, id)
 		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 			//disables the downvote button for 12 seconds
@@ -201,18 +201,18 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
 		content.zip = $rootScope.zip
-		console.log(content.zip)
+		// console.log(content.zip)
 		detroitFactory.blockProf(content.post).then(function(){
 			detroitFactory.addPost().then(function() {
 				$scope.posts = detroitFactory.returnList();
-				console.log($scope.posts);
+				// console.log($scope.posts);
 			})
 		})
 	}
 
 			$scope.formHide = true
 			$scope.upvotePost = function(post, id, index) {
-    	console.log(post, id, index);
+    	// console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 			//disables the upvote button for 12 seconds
@@ -228,7 +228,7 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 	}
 
 		$scope.downvotePost = function(post, id, index){
-		console.log(post, id)
+		// console.log(post, id)
 		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 			//disables the downvote button for 12 seconds
@@ -265,11 +265,11 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
 		content.zip = $rootScope.zip
-		console.log(content.zip)
+		// console.log(content.zip)
 		detroitFactory.blockProf(content.post).then(function(){
 			detroitFactory.addPost().then(function() {
 				$scope.posts = detroitFactory.returnList();
-				console.log($scope.posts);
+				// console.log($scope.posts);
 			})
 		})
 	}
@@ -277,7 +277,7 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 	$scope.formHide = true
 
 	$scope.upvotePost = function(post, id, index) {
-    	console.log(post, id, index);
+    	// console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 			//disables the upvote button for 12 seconds
@@ -293,7 +293,7 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 	}
 
 		$scope.downvotePost = function(post, id, index){
-		console.log(post, id)
+		// console.log(post, id)
 		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 			//disables the downvote button for 12 seconds
@@ -331,11 +331,11 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
 		content.zip = $rootScope.zip
-		console.log(content.zip)
+		// console.log(content.zip)
 		detroitFactory.blockProf(content.post).then(function(){
 			detroitFactory.addPost().then(function() {
 				$scope.posts = detroitFactory.returnList();
-				console.log($scope.posts);
+				// ($scope.posts);console.log
 			})
 		})
 	}
@@ -343,7 +343,7 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 			$scope.formHide = true
 
 	$scope.upvotePost = function(post, id, index) {
-    	console.log(post, id, index);
+    	// console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 			//disables the upvote button for 12 seconds
@@ -359,7 +359,7 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 	}
 
 		$scope.downvotePost = function(post, id, index){
-		console.log(post, id)
+		// console.log(post, id)
 		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 			//disables the downvote button for 12 seconds
@@ -396,11 +396,11 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
 		content.zip = $rootScope.zip
-		console.log(content.zip)
+		// console.log(content.zip)
 		detroitFactory.blockProf(content.post).then(function(){
 			detroitFactory.addPost().then(function() {
 				$scope.posts = detroitFactory.returnList();
-				console.log($scope.posts);
+				// console.log($scope.posts);
 			})
 		})
 	}
@@ -409,7 +409,7 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 
 
 	$scope.upvotePost = function(post, id, index) {
-    	console.log(post, id, index);
+    	// console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 			//disables the upvote button for 12 seconds
@@ -425,7 +425,7 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 	}
 
 	$scope.downvotePost = function(post, id, index){
-		console.log(post, id)
+		// console.log(post, id)
 		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 			//disables the downvote button for 12 seconds
@@ -464,11 +464,11 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
 		content.zip = $rootScope.zip
-		console.log(content.zip)
+		// console.log(content.zip)
 		detroitFactory.blockProf(content.post).then(function(){
 			detroitFactory.addPost().then(function() {
 				$scope.posts = detroitFactory.returnList();
-				console.log($scope.posts);
+				// console.log($scope.posts);
 			})
 		})
 	}
@@ -477,7 +477,7 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 
 
 	$scope.upvotePost = function(post, id, index) {
-    	console.log(post, id, index);
+    	// console.log(post, id, index);
 		detroitFactory.voteUp(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 			//disables the upvote button for 12 seconds
@@ -493,7 +493,7 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 	}
 
 	$scope.downvotePost = function(post, id, index){
-		console.log(post, id)
+		// console.log(post, id)
 		detroitFactory.voteDown(post, id).then(function(){
 			$scope.posts = detroitFactory.returnList();
 			//disables the downvote button for 12 seconds
