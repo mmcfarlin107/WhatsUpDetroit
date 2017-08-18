@@ -302,6 +302,28 @@ body {
   z-index: 100;
 }
 
+@media only screen and (min-width : 400px) {
+  .inputDiv {
+    width: 100%;
+    max-width: 400px;
+    min-height: 170px;
+    background-color: #400303;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-color: #400303;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(170,170,170,0.9);
+    top: 30%;
+    position: fixed;
+    left: 50%;
+    margin-left: -200px;
+
+    /*high z index just to make sure it appears over anything else*/
+    z-index: 100;
+  }
+}
+
 .inputDiv button {
   border-radius: 3px;
   background-color: white;
@@ -420,7 +442,7 @@ body {
 
 .scorestuff{
   position: relative;
-  top: 8px;
+  top: 23px;
 }
 
 .textArea{

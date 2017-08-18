@@ -65,7 +65,10 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
 		content.zip = $rootScope.zip
+<<<<<<< HEAD
 
+=======
+>>>>>>> eec0cf26d098fc81435b2633f6f7b958b2dfce9d
 		detroitFactory.blockProf(content.post).then(function(){
 			detroitFactory.addPost().then(function() {
 				$scope.posts = detroitFactory.returnList();
