@@ -65,10 +65,13 @@ app.controller('corktown', function($scope, detroitFactory, $rootScope){
 	//function below parses input and sends to route and then to database, returns to ng repeat
 	$scope.newPost = function(content) {
 		content.zip = $rootScope.zip
-		
+
 		detroitFactory.blockProf(content.post).then(function(){
 			detroitFactory.addPost().then(function() {
 				$scope.posts = detroitFactory.returnList();
+				$scope.content = {}
+				$scope.myForm.$setPristine()
+				$scope.myForm.$setUntouched()
 				// console.log($scope.posts);
 			})
 		})
@@ -138,6 +141,10 @@ app.controller('downtown', function($scope, detroitFactory, $rootScope){
 		detroitFactory.blockProf(content.post).then(function(){
 			detroitFactory.addPost().then(function() {
 				$scope.posts = detroitFactory.returnList();
+				$scope.content = {}
+				$scope.myForm.$setPristine()
+				$scope.myForm.$setUntouched()
+
 				// console.log($scope.posts);
 			})
 		})
@@ -205,6 +212,9 @@ app.controller('midtown', function($scope, detroitFactory, $rootScope){
 		detroitFactory.blockProf(content.post).then(function(){
 			detroitFactory.addPost().then(function() {
 				$scope.posts = detroitFactory.returnList();
+				$scope.content = {}
+				$scope.myForm.$setPristine()
+				$scope.myForm.$setUntouched()
 				// console.log($scope.posts);
 			})
 		})
@@ -269,6 +279,9 @@ app.controller('woodbridge', function($scope, detroitFactory, $rootScope){
 		detroitFactory.blockProf(content.post).then(function(){
 			detroitFactory.addPost().then(function() {
 				$scope.posts = detroitFactory.returnList();
+				$scope.content = {}
+				$scope.myForm.$setPristine()
+				$scope.myForm.$setUntouched()
 				// console.log($scope.posts);
 			})
 		})
@@ -335,6 +348,9 @@ app.controller('newCenter', function($scope, detroitFactory, $rootScope){
 		detroitFactory.blockProf(content.post).then(function(){
 			detroitFactory.addPost().then(function() {
 				$scope.posts = detroitFactory.returnList();
+				$scope.content = {}
+				$scope.myForm.$setPristine()
+				$scope.myForm.$setUntouched()
 				// ($scope.posts);console.log
 			})
 		})
@@ -400,6 +416,9 @@ app.controller('eastCentral', function($scope, detroitFactory, $rootScope){
 		detroitFactory.blockProf(content.post).then(function(){
 			detroitFactory.addPost().then(function() {
 				$scope.posts = detroitFactory.returnList();
+				$scope.content = {}
+				$scope.myForm.$setPristine()
+				$scope.myForm.$setUntouched()
 				// console.log($scope.posts);
 			})
 		})
@@ -468,6 +487,9 @@ app.controller('southwest', function($scope, detroitFactory, $rootScope){
 		detroitFactory.blockProf(content.post).then(function(){
 			detroitFactory.addPost().then(function() {
 				$scope.posts = detroitFactory.returnList();
+				$scope.content = {}
+				$scope.myForm.$setPristine()
+				$scope.myForm.$setUntouched()
 				// console.log($scope.posts);
 			})
 		})
